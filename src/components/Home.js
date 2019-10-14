@@ -1,12 +1,10 @@
 import React from 'react';
-import Header from './Header/';
-import Footer from './Footer/';
+import IntroBanner from './Banners/IntroBanner';
 
 const Home = () => {
   return (
     <div>
-      <Header/>
-      <Footer/>
+      <IntroBanner/>
     </div>
   );
 }

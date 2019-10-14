@@ -15,13 +15,16 @@ const Header = () => {
           <nav id="navigation">
 					  <ul id="responsive">
               <li>
-                <Link to="#" className="current">Home</Link>
+                <Link to="#" className="current">INICIO</Link>
               </li>
               <li>
-                <Link to="#">Empleos</Link>
+                <Link to="#">EMPLEOS</Link>
               </li>
               <li>
-                <Link to="#">Candidatos</Link>
+                <Link to="#">CANDIDATOS</Link>
+              </li>
+              <li>
+                <Link to="/registro">REGISTRO</Link>
               </li>
             </ul>
           </nav>
