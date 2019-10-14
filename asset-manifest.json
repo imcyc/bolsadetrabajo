@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/bolsadetrabajo/static/css/main.b100e6da.chunk.css",
-    "main.js": "/bolsadetrabajo/static/js/main.c4cdb614.chunk.js",
-    "main.js.map": "/bolsadetrabajo/static/js/main.c4cdb614.chunk.js.map",
+    "main.css": "/bolsadetrabajo/static/css/main.cfda8877.chunk.css",
+    "main.js": "/bolsadetrabajo/static/js/main.742182a8.chunk.js",
+    "main.js.map": "/bolsadetrabajo/static/js/main.742182a8.chunk.js.map",
     "runtime-main.js": "/bolsadetrabajo/static/js/runtime-main.6662564b.js",
     "runtime-main.js.map": "/bolsadetrabajo/static/js/runtime-main.6662564b.js.map",
-    "static/js/2.3d4c7571.chunk.js": "/bolsadetrabajo/static/js/2.3d4c7571.chunk.js",
-    "static/js/2.3d4c7571.chunk.js.map": "/bolsadetrabajo/static/js/2.3d4c7571.chunk.js.map",
+    "static/js/2.58c23a76.chunk.js": "/bolsadetrabajo/static/js/2.58c23a76.chunk.js",
+    "static/js/2.58c23a76.chunk.js.map": "/bolsadetrabajo/static/js/2.58c23a76.chunk.js.map",
     "index.html": "/bolsadetrabajo/index.html",
-    "precache-manifest.0435eab2dcd1fec7acf841fa23e49f16.js": "/bolsadetrabajo/precache-manifest.0435eab2dcd1fec7acf841fa23e49f16.js",
+    "precache-manifest.87ee3fca66ade3f945b6d64ecb8ff32a.js": "/bolsadetrabajo/precache-manifest.87ee3fca66ade3f945b6d64ecb8ff32a.js",
     "service-worker.js": "/bolsadetrabajo/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/bolsadetrabajo/static/css/main.b100e6da.chunk.css.map",
-    "static/media/logo.svg": "/bolsadetrabajo/static/media/logo.25bf045c.svg"
+    "static/css/main.cfda8877.chunk.css.map": "/bolsadetrabajo/static/css/main.cfda8877.chunk.css.map",
+    "static/media/logo-blanco.svg": "/bolsadetrabajo/static/media/logo-blanco.580ea230.svg",
+    "static/media/logo.svg": "/bolsadetrabajo/static/media/logo.c42aeac8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6662564b.js",
-    "static/js/2.3d4c7571.chunk.js",
-    "static/css/main.b100e6da.chunk.css",
-    "static/js/main.c4cdb614.chunk.js"
+    "static/js/2.58c23a76.chunk.js",
+    "static/css/main.cfda8877.chunk.css",
+    "static/js/main.742182a8.chunk.js"
   ]
 }
