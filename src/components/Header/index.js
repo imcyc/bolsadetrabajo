@@ -19,9 +19,19 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/empleos">EMPLEOS</Link>
+                <ul className="dropdown-nav">
+                  <li>
+                    <Link to="/publicar-empleo">PUBLICAR EMPLEO</Link>
+                  </li>
+                </ul>
               </li>
               <li>
-                <Link to="#">CANDIDATOS</Link>
+                <Link to="/candidatos">CANDIDATOS</Link>
+                <ul className="dropdown-nav">
+                  <li>
+                    <Link to="/publicar-candidato">PUBLICAR CANDIDATO</Link>
+                  </li>
+                </ul>
               </li>
               <li>
                 <Link to="/registro">REGISTRO</Link>

@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Registro from './components/Registro';
 import Empleos from './components/Empleos';
 import Empleo from './components/Empleo';
+import Candidatos from './components/Candidatos';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/registro" component={Registro} />
         <Route exact path="/empleos" component={Empleos} />
         <Route exact path="/empleo" component={Empleo} />
+        <Route exact path="/candidatos" component={Candidatos} />
         <Footer/>
       </div>
     </Router>

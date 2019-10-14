@@ -1,5 +1,6 @@
 import React from 'react';
 import SidebarEmpleos from './Sidebars/SidebarEmpleos';
+import Notificaciones from './Sidebars/Notificaciones';
 import CajaEmpleo from './Empleos/CajaEmpleo';
 
 const Empleos = () => {
@@ -59,26 +60,7 @@ const Empleos = () => {
           <SidebarEmpleos/>
           <div className="col-xl-9 col-lg-8 content-left-offset">
             <h3 className="page-title">Resultados</h3>
-            <div className="notify-box margin-top-15">
-              <div className="switch-container">
-                <label className="switch">
-                  <input type="checkbox" />
-                    <span className="switch-button"></span>
-                    <span className="switch-text">Recibir alertas de correo para esta búsqueda</span>
-                </label>
-              </div>
-
-              <div className="sort-by">
-                <span>Ordenar por:</span>
-                <select className="selectpicker hide-tick">
-                  <option>Relevantes</option>
-                  <option>Nuevos</option>
-                  <option>Viejos</option>
-                  <option>Aleatorios</option>
-                </select>
-              </div>
-            </div>
-
+            <Notificaciones/>
             <div className="listings-container margin-top-35">
               {empleos.map(empleo => (
                 <CajaEmpleo key={empleo.key} logo={empleo.logo} compania={empleo.compania} titulo={empleo.titulo} descripcion={empleo.descripcion} lugar={empleo.lugar} tipo={empleo.tipo} sueldo={empleo.sueldo} tiempo={empleo.tiempo}/>
