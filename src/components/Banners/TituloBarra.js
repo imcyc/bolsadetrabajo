@@ -13,7 +13,7 @@ const TituloBarra = (props) => {
                 <li>
                   <Link to="/">INICIO</Link>
                 </li>
-                <li>REGISTRO</li>
+                <li>{props.ruta}</li>
               </ul>
             </nav>
           </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Registro = () => {
   return (
     <div>
-      <TituloBarra titulo="Registro"/>
+      <TituloBarra titulo="Registro" ruta="REGISTRO"/>
 
       <div className="container">
         <div className="row">

@@ -15,10 +15,10 @@ const Header = () => {
           <nav id="navigation">
 					  <ul id="responsive">
               <li>
-                <Link to="#" className="current">INICIO</Link>
+                <Link to="/" className="current">INICIO</Link>
               </li>
               <li>
-                <Link to="#">EMPLEOS</Link>
+                <Link to="/empleos">EMPLEOS</Link>
               </li>
               <li>
                 <Link to="#">CANDIDATOS</Link>

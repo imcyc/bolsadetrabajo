@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import Registro from './components/Registro';
+import Empleos from './components/Empleos';
+import Empleo from './components/Empleo';
 import './App.css';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/registro" component={Registro} />
+        <Route exact path="/empleos" component={Empleos} />
+        <Route exact path="/empleo" component={Empleo} />
         <Footer/>
       </div>
     </Router>

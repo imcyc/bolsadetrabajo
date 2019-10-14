@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div>
-      <TituloBarra titulo="Login de Usuario"/>
+      <TituloBarra titulo="Login de Usuario" ruta="LOGIN"/>
       <div className="container">
         <div className="row">
           <div className="col-xl-5 offset-xl-3">
