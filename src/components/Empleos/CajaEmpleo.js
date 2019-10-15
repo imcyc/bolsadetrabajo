@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 const CajaEmpleo = (props) => {
   return(
     <div>
-      <Link to={{
-        pathname: '/empleo',
-        empleoProps:{
-          logo: props.logo,
-          compania: props.compania,
-          descripcion: props.descripcion
-        }
-      }} class="job-listing">
+      <Link
+        id={props.id}
+        to={{
+          pathname: `/empleo/${props.id}`
+        }}
+        class="job-listing"
+      >
         <div className="job-listing-details">
           <div className="job-listing-company-logo">
+            
             <img src={props.logo} alt={props.titulo} />
           </div>
           <div className="job-listing-description">

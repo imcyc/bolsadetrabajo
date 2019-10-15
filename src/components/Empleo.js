@@ -1,10 +1,8 @@
 import React from 'react';
 
 const Empleo = (props) => {
-  console.log(props.location.empleoProps)
   return(
     <div>
-
       <div className="single-page-header" data-background-image="images/single-job.jpg">
         <div className="container">
           <div className="row">
@@ -17,7 +15,7 @@ const Empleo = (props) => {
                     </a>
                   </div>
                   <div className="header-details">
-                    <h3>Ingeniero Civil</h3>
+                    <h3>{props.match.params.id} - Ingeniero Civil</h3>
                     <h5>CEMEX MÉXICO</h5>
                     <ul>
                       <li><a href="single-company-profile.html"><i className="icon-material-outline-business"></i> IMCYC</a></li>
@@ -44,7 +42,7 @@ const Empleo = (props) => {
               <h3 className="margin-bottom-30">Ubicación:</h3>
               <div id="single-job-map-container">
                 <div id="singleListingMap" data-latitude="51.507717" data-longitude="-0.131095" data-map-icon="im im-icon-Hamburger"></div>
-                <a href="#" id="streetView">Street View</a>
+                <a href="/" id="streetView">Street View</a>
               </div>
             </div>
           </div>
