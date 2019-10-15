@@ -93,10 +93,6 @@ const Empleo = (props) => {
       </div>
       </div>
       )}
-      
-
-      
-      
     </div>
   )
 }

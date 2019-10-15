@@ -7,7 +7,6 @@ const Header = () => {
     <header id="header-container" className="fullwidth">
     <div id="header">
       <div className="container">
-
         <div className="left-side">
           <div id="logo">
             <Link to="/"><img src={logo} alt=""/></Link>
@@ -40,8 +39,6 @@ const Header = () => {
           </nav>
           <div className="clearfix"></div>
         </div>
-      
-
         <div className="right-side">
           <div className="header-widget hide-on-mobile">
             <div className="header-notifications">
@@ -63,20 +60,56 @@ const Header = () => {
               </div>
             </div>
           </div>
-
           <div className="header-widget">
             <div className="header-notifications user-menu">
               <div className="header-notifications-trigger">
                 <Link to="#">
                   <div className="user-avatar status-online">
-                    <img src="images/user-avatar-small-01.jpg" alt="" />
+                    <img src="https://www.quantilia.com/wp-content/themes/quantilia/images/image55.png" alt="" />
                   </div>
                 </Link>
               </div>
+              
+              <div className="header-notifications-dropdown">
+                <div className="user-status">
+                  <div className="user-details">
+                    <div className="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""/></div>
+                    <div className="user-name">
+                      Juan Gallardo <span>Ingeniero Civil</span>
+                    </div>
+                  </div>
+                  <div className="status-switch" id="snackbar-user-status">
+                    <label className="user-online current-status">En Linea</label>
+                    <label className="user-invisible">Invisible</label>
+                    <span className="status-indicator" aria-hidden="true"></span>
+                  </div>	
+                </div>
+                <ul class="user-menu-small-nav">
+                  <li>
+                    <Link to="/dashboard">
+                      <i class="icon-material-outline-dashboard"></i> Panel de control
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/configuracion">
+                      <i class="icon-material-outline-settings"></i> Configuracion
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <i class="icon-material-outline-power-settings-new"></i> Salir
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+
+
+
+              
             </div>
           </div>
         </div>
-
       </div>
     </div>
     </header>
