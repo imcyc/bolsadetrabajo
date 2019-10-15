@@ -30,16 +30,15 @@ const SidebarEmpleos = () => {
         <div className="sidebar-widget">
 					<h3>Categoría:</h3>
 					<select className="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="Todas" >
-						<option>Admin Support</option>
-						<option>Customer Service</option>
-						<option>Data Analytics</option>
-						<option>Design & Creative</option>
-						<option>Legal</option>
-						<option>Software Developing</option>
-						<option>IT & Networking</option>
-						<option>Writing</option>
-						<option>Translation</option>
-						<option>Sales & Marketing</option>
+						<option value="Ingeniero Civil">Ingeniero Civil</option>
+						<option value="Ingeniero Civil">Ingeniero Estructural</option>
+						<option value="Ingeniero Civil">Laboratorista de concreto</option>
+						<option value="Ingeniero Civil">Arquitecto</option>
+						<option value="Ingeniero Civil">Dibujante</option>
+						<option value="Ingeniero Civil">Técnico de Mantenimiento</option>
+						<option value="Ingeniero Civil">Supervisor de Obra</option>
+						<option value="Ingeniero Civil">Operador de Maquinaria</option>
+						<option value="Ingeniero Civil">Chofer de revolvedora</option>
 					</select>
 				</div>
 
@@ -75,7 +74,7 @@ const SidebarEmpleos = () => {
         <div className="sidebar-widget">
 					<h3>Sueldo:</h3>
 					<div className="margin-top-55"></div>
-					<input className="range-slider" type="text" value="" data-slider-currency="$" data-slider-min="1500" data-slider-max="15000" data-slider-step="100" data-slider-value="[1500,15000]"/>
+					<input className="range-slider" type="text" defaultValue="2000" data-slider-currency="$" data-slider-min="1500" data-slider-max="15000" data-slider-step="100" data-slider-value="[1500,15000]"/>
 				</div>
 
       </div>

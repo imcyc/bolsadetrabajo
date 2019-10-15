@@ -6,10 +6,11 @@ const CajaEmpleo = (props) => {
     <div>
       <Link
         id={props.id}
+        logo={props.logo}
         to={{
           pathname: `/empleo/${props.id}`
         }}
-        class="job-listing"
+        className="job-listing"
       >
         <div className="job-listing-details">
           <div className="job-listing-company-logo">

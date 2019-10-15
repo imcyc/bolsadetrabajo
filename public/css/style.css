@@ -7797,7 +7797,7 @@ input:checked + .switch-button:before {
 }
 
 @media (max-width: 1240px) {
-	.banner-headline { max-width: 65% }
+	.banner-headline { max-width: 100% }
 }
 
 @media (max-width: 992px) {

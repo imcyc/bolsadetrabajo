@@ -7,10 +7,10 @@ const IntroBanner = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="banner-headline">
-              <h3>
-                <strong>Bolsa de trabajo de la Construcción</strong>
+              <h3 style={{textAlign: 'center'}}>
+                <strong>Bolsa de trabajo especializada de la Construcción</strong>
                 <br/>
-                <span>Encuentra la vacante/candidato que estás buscando <strong class="color">IMCYC</strong> compartir el conocimiento.</span>
+                <span>Encuentra la vacante/candidato que estás buscando<br/><strong class="color">IMCYC</strong> compartir el conocimiento.</span>
               </h3>
             </div>
           </div>

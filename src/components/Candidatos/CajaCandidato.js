@@ -30,7 +30,7 @@ const CajaCandidato = () => {
             <li>Experiencia <strong>95%</strong></li>
           </ul>
         </div>
-        <Link to="single-freelancer-profile.html" className="button button-sliding-icon ripple-effect">Ver Candidato <i class="icon-material-outline-arrow-right-alt"></i></Link>
+        <Link to="single-freelancer-profile.html" className="button button-sliding-icon ripple-effect">Ver Candidato <i className="icon-material-outline-arrow-right-alt"></i></Link>
       </div>
     </div>
   );

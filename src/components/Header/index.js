@@ -4,7 +4,7 @@ import logo from '../../logo.svg';
 
 const Header = () => {
   return (
-    <header id="header-container" class="fullwidth">
+    <header id="header-container" className="fullwidth">
     <div id="header">
       <div className="container">
 
@@ -46,7 +46,7 @@ const Header = () => {
           <div className="header-widget hide-on-mobile">
             <div className="header-notifications">
               <div className="header-notifications-trigger">
-                <Link to="#"><i class="icon-feather-bell"></i><span>4</span></Link>
+                <Link to="#"><i className="icon-feather-bell"></i><span>4</span></Link>
               </div>
               <div className="header-notifications-dropdown">
                 <div className="header-notifications-headline">
@@ -59,7 +59,7 @@ const Header = () => {
             </div>
             <div className="header-notifications">
               <div className="header-notifications-trigger">
-                <Link to="#"><i class="icon-feather-mail"></i><span>3</span></Link>
+                <Link to="#"><i className="icon-feather-mail"></i><span>3</span></Link>
               </div>
             </div>
           </div>

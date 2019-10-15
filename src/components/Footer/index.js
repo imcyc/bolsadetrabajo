@@ -23,22 +23,22 @@ const Footer = () => {
                       <ul className="footer-social-links">
                         <li>
                           <Link to="/" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
-                            <i class="icon-brand-facebook-f"></i>
+                            <i className="icon-brand-facebook-f"></i>
                           </Link>
                         </li>
                         <li>
                           <Link to="/" title="Twitter" data-tippy-placement="bottom" data-tippy-theme="light">
-                            <i class="icon-brand-twitter"></i>
+                            <i className="icon-brand-twitter"></i>
                           </Link>
                         </li>
                         <li>
                           <Link to="/" title="Google Plus" data-tippy-placement="bottom" data-tippy-theme="light">
-                            <i class="icon-brand-google-plus-g"></i>
+                            <i className="icon-brand-google-plus-g"></i>
                           </Link>
                         </li>
                         <li>
                           <Link to="/" title="LinkedIn" data-tippy-placement="bottom" data-tippy-theme="light">
-                            <i class="icon-brand-linkedin-in"></i>
+                            <i className="icon-brand-linkedin-in"></i>
                           </Link>
                         </li>
                       </ul>
@@ -47,9 +47,9 @@ const Footer = () => {
                   <div className="footer-row">
                     <div className="footer-row-inner">
                       <select className="selectpicker language-switcher" data-selected-text-format="count" data-size="5">
-                        <option selected>Español</option>
-                        <option>Français</option>
-                        <option>English</option>
+                        <option value="Espanol">Español</option>
+                        <option value="English">English</option>
+                        <option value="Français">Français</option>
                       </select>
                     </div>
                   </div>

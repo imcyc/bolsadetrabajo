@@ -97,8 +97,7 @@ class App extends Component {
             <Route 
               exact 
               path="/empleo/:id"
-              component={Empleo} 
-              render={(props) => <Empleo {...props} verEmpleo={this.verEmpleo} />}
+              render={(props) => <Empleo {...props} empresas={this.state.empresas} verEmpleo={this.verEmpleo} />}
             />
             <Route exact path="/candidatos" component={Candidatos} />
             <Route 
