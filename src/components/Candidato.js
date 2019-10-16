@@ -95,7 +95,7 @@ const Empleos = (props) => {
                   <div className="overview-item"><strong>15 Años</strong><span>Experiencia</span></div>
                   <div className="overview-item"><strong>{Heroe.lugar}</strong><span>Ubicación</span></div>
                 </div>
-				        <Link to="" className="apply-now-button popup-with-zoom-anim margin-bottom-50">Contactar con candidato <i className="icon-material-outline-arrow-right-alt"></i></Link>
+
                 <div className="sidebar-widget">
                   <div className="freelancer-indicators">
                     <div className="indicator">
@@ -120,6 +120,7 @@ const Empleos = (props) => {
                     </div>
                   </div>
                 </div>
+
                 <div className="sidebar-widget">
                   <h3>Habilidades</h3>
                   <div className="task-tags">
@@ -130,6 +131,7 @@ const Empleos = (props) => {
                     <span>Cemento</span>
                   </div>
                 </div>
+
                 <div className="sidebar-widget">
                   <h3>CV / Documentos</h3>
                   <div className="attachments-container">
@@ -137,12 +139,36 @@ const Empleos = (props) => {
                     <a href="/" className="attachment-box ripple-effect"><span>Contrato</span><i>DOCX</i></a>
                   </div>
                 </div>
+
                 <div className="sidebar-widget">
-                  <h3>Compartir</h3>
+                  <h3>Contactar</h3>
+                  <div className="col-xl-12">
+                      <div className="submit-field">
+                          <h5>Nombre:</h5>
+                          <input type="text" className="with-border" />
+                      </div>
+                  </div>
+                  <div className="col-xl-12">
+                      <div className="submit-field">
+                          <h5>Teléfono:</h5>
+                          <input type="text" className="with-border" />
+                      </div>
+                  </div>
+                  <div className="col-xl-12">
+                      <div className="submit-field">
+                          <h5>Correo Electrónico:</h5>
+                          <input type="text" className="with-border" />
+                      </div>
+                  </div>
+                  <Link to="" className="apply-now-button popup-with-zoom-anim margin-bottom-10">Contactar con candidato <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                </div>
+
+                <div className="sidebar-widget">
+                  <h3>Compartir Candidato</h3>
                   <button className="bookmark-button margin-bottom-25">
                     <span className="bookmark-icon"></span>
-                    <span className="bookmark-text">Agregar a Favoritos</span>
-                    <span className="bookmarked-text">Agregado</span>
+                    <span className="bookmark-text">Enviar datos de candidato</span>
+                    <span className="bookmarked-text">Datos enviados</span>
                   </button>
                 </div>
               </div>

@@ -9,7 +9,7 @@ const PublicarEmpleo = (props) => {
     }
 
     return(
-        <div className="dashboard-container">
+        <div className="dashboard-container" style={{marginBottom: '100px'}}>
             
             <DashboardSidebarEmpresa sayHello={sayHello}/>
 
