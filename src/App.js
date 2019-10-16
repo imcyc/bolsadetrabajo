@@ -9,6 +9,11 @@ import Empleos from './components/Empleos';
 import Empleo from './components/Empleo';
 import Candidatos from './components/Candidatos';
 import Candidato from './components/Candidato';
+import Aplicar from './components/Aplicar';
+import Dashboard from './components/Dashboard';
+import Configuracion from './components/Configuracion';
+import PublicarEmpleo from './components/PublicarEmpleo';
+import PublicarCandidato from './components/PublicarCandidato';
 import './App.css';
 
 class App extends Component {
@@ -145,6 +150,31 @@ class App extends Component {
               exact 
               path="/candidato/:id"
               render={(props) => <Candidato {...props} candidatos={this.state.candidatos} />}
+            />
+            <Route 
+              exact
+              path="/aplicar"
+              render={(props) => <Aplicar {...props} empresas={this.state.empresas} />}
+            />
+            <Route 
+              exact
+              path="/dashboard"
+              render={(props) => <Dashboard {...props} candidatos={this.state.candidatos} />}
+            />
+            <Route 
+              exact
+              path="/configuracion"
+              render={(props) => <Configuracion {...props} candidatos={this.state.candidatos} />}
+            />
+            <Route 
+              exact
+              path="/publicar-empleo"
+              render={(props) => <PublicarEmpleo {...props} candidatos={this.state.candidatos} />}
+            />
+            <Route 
+              exact
+              path="/publicar-candidato"
+              render={(props) => <PublicarCandidato {...props} candidatos={this.state.candidatos} />}
             />
             <Route 
               exact

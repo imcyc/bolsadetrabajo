@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Empleo = (props) => {
 
@@ -57,7 +58,7 @@ const Empleo = (props) => {
           </div>
           <div className="col-xl-4 col-lg-4">
 			      <div className="sidebar-container">
-				      <a href="#small-dialog" className="apply-now-button popup-with-zoom-anim">Aplicar Ahora <i className="icon-material-outline-arrow-right-alt"></i></a>
+				      <Link to="/aplicar" className="apply-now-button popup-with-zoom-anim">Aplicar Ahora <i className="icon-material-outline-arrow-right-alt"></i></Link>
               <div className="sidebar-widget">
                 <div className="job-overview">
                   <div className="job-overview-headline">Resumen del puesto</div>
