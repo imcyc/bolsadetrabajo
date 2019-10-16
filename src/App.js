@@ -121,7 +121,11 @@ class App extends Component {
 
   verEmpleo = () => {
     console.log('cacatua');
-  }
+  };
+
+  callbackFunction = (childData) => {
+    console.log(childData);
+  };
 
   render(){
     return (
@@ -159,7 +163,7 @@ class App extends Component {
             <Route 
               exact
               path="/dashboard"
-              render={(props) => <Dashboard {...props} candidatos={this.state.candidatos} />}
+              render={(props) => <Dashboard {...props} parentCallback={this.callbackFunction} candidatos={this.state.candidatos} />}
             />
             <Route 
               exact
