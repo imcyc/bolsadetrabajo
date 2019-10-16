@@ -26,12 +26,12 @@ const Empleo = (props) => {
                     </a>
                   </div>
                   <div className="header-details">
-                    <h3>{Heroe.titulo}</h3>
-                    <h5>{Heroe.compania}</h5>
+                    <h3>{Heroe.vacante}</h3>
+                    <h5>{Heroe.empresa}</h5>
                     <ul>
-                      <li><a href="single-company-profile.html"><i className="icon-material-outline-business"></i> {Heroe.lugar}</a></li>
+                      <li><a href="single-company-profile.html"><i className="icon-material-outline-business"></i> {Heroe.ciudad}</a></li>
                       <li><div className="star-rating" data-rating="4.9"></div></li>
-                      <li><img className="flag" src="images/flags/gb.svg" alt="" /> {Heroe.tipo}</li>
+                      <li><img className="flag" src="images/flags/gb.svg" alt="" /> {Heroe.tipoVacante}</li>
                       <li><div className="verified-badge-with-title">Verificado por IMCYC</div></li>
                     </ul>
                   </div>
@@ -58,7 +58,7 @@ const Empleo = (props) => {
           </div>
           <div className="col-xl-4 col-lg-4">
 			      <div className="sidebar-container">
-				      <Link to="/aplicar" className="apply-now-button popup-with-zoom-anim">Aplicar Ahora <i className="icon-material-outline-arrow-right-alt"></i></Link>
+				      
               <div className="sidebar-widget">
                 <div className="job-overview">
                   <div className="job-overview-headline">Resumen del puesto</div>
@@ -67,17 +67,17 @@ const Empleo = (props) => {
                       <li>
                         <i className="icon-material-outline-location-on"></i>
                         <span>Ubicación</span>
-                        <h5>{Heroe.lugar}</h5>
+                        <h5>{Heroe.ubicacion}</h5>
                       </li>
                       <li>
                         <i className="icon-material-outline-business-center"></i>
                         <span>Tipo</span>
-                        <h5>{Heroe.tipo}</h5>
+                        <h5>{Heroe.tipoVacante}</h5>
                       </li>
                       <li>
                         <i className="icon-material-outline-local-atm"></i>
                         <span>Sueldo</span>
-                        <h5>{Heroe.sueldo}</h5>
+                        <h5>${Heroe.sueldoMin} - ${Heroe.sueldoMax} MX</h5>
                       </li>
                       <li>
                         <i className="icon-material-outline-access-time"></i>
@@ -87,6 +87,29 @@ const Empleo = (props) => {
                     </ul>
                   </div>
                 </div>
+              </div>
+
+              <div className="sidebar-widget">
+                <h3>Contactar</h3>
+                <div className="col-xl-12">
+                    <div className="submit-field">
+                        <h5>Nombre:</h5>
+                        <input type="text" className="with-border" />
+                    </div>
+                </div>
+                <div className="col-xl-12">
+                    <div className="submit-field">
+                        <h5>Teléfono:</h5>
+                        <input type="text" className="with-border" />
+                    </div>
+                </div>
+                <div className="col-xl-12">
+                    <div className="submit-field">
+                        <h5>Correo Electrónico:</h5>
+                        <input type="text" className="with-border" />
+                    </div>
+                </div>
+                <Link to="/aplicar" className="apply-now-button popup-with-zoom-anim">Aplicar Ahora <i className="icon-material-outline-arrow-right-alt"></i></Link>
               </div>
             </div>
           </div>

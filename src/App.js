@@ -22,102 +22,41 @@ class App extends Component {
     super(props);
     this.state = {
       isShow: true,
+      value: '',
       empresas: [
         {
           id: 1,
-          logo: 'http://www.imcyc.com/propuesta/wp-content/uploads/2017/07/logo_cemex.svg',
-          compania:'CEMEX',
-          titulo:'Ingeniero Civil',
-          descripcion:'Se solicita ingeniero civil recién egresado para laborar en empresa especializada.',
-          lugar: 'CDMX',
-          tipo: 'Tiempo completo',
-          sueldo: '$35,000-$38,000',
-          tiempo: 'Hace 2 días'
-        },
-        {
-          id: 2,
-          logo: 'http://www.imcyc.com/propuesta/wp-content/uploads/2017/07/logo_fortaleza.svg',
-          compania:'FORTALEZZA',
-          titulo:'Arquitecto',
-          descripcion:'Se solicita Arquitecto recién egresado para laborar en empresa especializada.',
-          lugar: 'León, Guanajuato',
-          tipo: 'Tiempo completo',
-          sueldo: '$25,000-$30,000',
-          tiempo: 'Hace 1 día'
-        },
-        {
-          id: 3,
-          logo: 'http://www.imcyc.com/propuesta/wp-content/uploads/2017/07/logo_chihuahua.svg',
-          compania:'CEMENTOS CHIHUAHUA',
-          titulo:'Ingeniero Estructural',
-          descripcion:'Se solicita Arquitecto recién egresado para laborar en empresa especializada.',
-          lugar: 'Chihuahua',
-          tipo: 'Tiempo completo',
-          sueldo: '$45,000-$55,000',
-          tiempo: 'Hace 3 días'
+          logo: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
+          vacante:'Ingeniero Civil',
+          tipoVacante: 'Tiempo completo',
+          categoria: 'Ingeniero Civil',
+          ubicacion: 'Avenida Corazón Fiel 102',
+          ciudad: 'CDMX',
+          sueldoMin: '2000',
+          sueldoMax: '5000',
+          estudios: 'Licenciatura',
+          empresa: 'CEMEX',
+          contacto: 'Julia lópez',
+          descripcion: 'Se solicita ingeniero civil recién egresado para laborar en empresa especializada.',
+          tiempo: '15/10/2019'
         }
       ],
       candidatos: [
         {
           id: 1,
-          avatar: 'https://cdn.moneymarketing.co.uk/content/uploads/2019/08/29125853/Profile-Carl-Roberts-400x500.jpg',
-          nombre:'Julio Cisneros Palacios',
-          telefono: '52 554356 7578',
-          email: 'jcisnero@gmail.com',
-          direccion: 'Avenida Siempre Viva 43',
-          experiencia: '5 Años',
-          titulo:'Ingeniero Civil',
-          estudios: 'Maestría',
-          nacionalidad:'Mexicana',
-          lugar: 'Chihuahua',
-          tipo: 'Tiempo completo',
-          sueldo: '$45,000-$55,000',
-          tiempo: 'Hace 3 días',
-          descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Fermentum leo vel orci porta non. Tempor commodo ullamcorper a lacus vestibulum sed arcu non. Nisl condimentum id venenatis a condimentum vitae. Ac ut consequat semper viverra nam libero. Vel eros donec ac odio tempor orci dapibus ultrices in. Semper eget duis at tellus at. Arcu ac tortor dignissim convallis aenean et. Sagittis orci a scelerisque purus semper eget duis at tellus. Ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Quisque egestas diam in arcu cursus euismod quis viverra. Tortor condimentum lacinia quis vel eros donec ac odio.'
-        },
-        {
-          id: 2,
           avatar: 'https://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-demo.jpg',
           nombre:'Mariela Lopez Serrano',
-          telefono: '52 554356 7578',
-          email: 'mlopez@gmail.com',
-          direccion: 'Avenida Corazón Fiel 102',
-          experiencia: '15 Años',
-          titulo:'Laboratorista',
+          tipoVacante: 'Tiempo completo',
+          categoria: 'Ingeniero Civil',
+          ubicacion: 'Avenida Corazón Fiel 102',
+          sueldoMin: '2000',
+          sueldoMax: '5000',
           estudios: 'Licenciatura',
-          nacionalidad:'Mexicana',
-          lugar: 'CDMX',
-          tipo: 'Tiempo completo',
-          sueldo: '$75,000-$85,000',
-          tiempo: 'Hace 3 días',
-          descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Fermentum leo vel orci porta non. Tempor commodo ullamcorper a lacus vestibulum sed arcu non. Nisl condimentum id venenatis a condimentum vitae. Ac ut consequat semper viverra nam libero. Vel eros donec ac odio tempor orci dapibus ultrices in. Semper eget duis at tellus at. Arcu ac tortor dignissim convallis aenean et. Sagittis orci a scelerisque purus semper eget duis at tellus. Ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Quisque egestas diam in arcu cursus euismod quis viverra. Tortor condimentum lacinia quis vel eros donec ac odio.'
         }
       ]
     };
+    this.handlePublicarEmpleo = this.handlePublicarEmpleo.bind(this);
   }
-
-  addEmpresas = () => {
-    // create a clone of your array of players; don't modify objects on the state directly
-    const empresas = this.state.empresas.slice(0);
-  
-    empresas.push(
-      {
-        id: 12,
-        logo: 'http://www.imcyc.com/propuesta/wp-content/uploads/2017/07/logo_fortaleza.svg',
-        compania:'FORTALEZZA',
-        titulo:'Arquitecto',
-        descripcion:'Se solicita Arquitecto recién egresado para laborar en empresa especializada.',
-        lugar: 'León, Guanajuato',
-        tipo: 'Tiempo completo',
-        sueldo: '$25,000-$30,000',
-        tiempo: 'Hace 1 día'
-      }
-    );
-  
-    this.setState({
-      empresas: empresas,
-    });
-  };
 
   verEmpleo = () => {
     console.log('cacatua');
@@ -126,6 +65,32 @@ class App extends Component {
   callbackFunction = (childData) => {
     console.log(childData);
   };
+
+  handlePublicarEmpleo = (event) => {
+    event.preventDefault();
+    const empresas = this.state.empresas.slice(0);
+
+    empresas.push({
+      id: 5,
+      logo: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
+      vacante: event.target.vacante.value,
+      tipoVacante: event.target.tipoVacante.value,
+      categoria: event.target.categoria.value,
+      ubicacion: event.target.ubicacion.value,
+      ciudad: event.target.ciudad.value,
+      sueldoMin: event.target.sueldoMin.value,
+      sueldoMax: event.target.sueldoMax.value,
+      estudios: event.target.estudios.value,
+      empresa: event.target.empresa.value,
+      contacto: event.target.contacto.value,
+      descripcion: event.target.descripcion.value,
+      tiempo: '15/10/2019'
+    })
+
+    this.setState({
+      empresas: empresas,
+    });
+  }
 
   render(){
     return (
@@ -173,7 +138,7 @@ class App extends Component {
             <Route 
               exact
               path="/publicar-vacante"
-              render={(props) => <PublicarEmpleo {...props} candidatos={this.state.candidatos} />}
+              render={(props) => <PublicarEmpleo {...props} candidatos={this.state.candidatos} handlePublicarEmpleo={this.handlePublicarEmpleo} />}
             />
             <Route 
               exact
