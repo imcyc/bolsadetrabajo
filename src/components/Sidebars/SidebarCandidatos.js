@@ -29,16 +29,16 @@ const SidebarCandidatos = () => {
 
         <div className="sidebar-widget">
 					<h3>Categoría:</h3>
-					<select className="selectpicker default" multiple data-selected-text-format="count" data-size="7" title="Todas" >
+					<select data-size="7" title="Todas" >
 						<option value="Ingeniero Civil">Ingeniero Civil</option>
-						<option value="Ingeniero Civil">Ingeniero Estructural</option>
-						<option value="Ingeniero Civil">Laboratorista de concreto</option>
-						<option value="Ingeniero Civil">Arquitecto</option>
-						<option value="Ingeniero Civil">Dibujante</option>
-						<option value="Ingeniero Civil">Técnico de Mantenimiento</option>
-						<option value="Ingeniero Civil">Supervisor de Obra</option>
-						<option value="Ingeniero Civil">Operador de Maquinaria</option>
-						<option value="Ingeniero Civil">Chofer de revolvedora</option>
+						<option value="Ingeniero Estructural">Ingeniero Estructural</option>
+						<option value="Laboratorista de concreto">Laboratorista de concreto</option>
+						<option value="Arquitecto">Arquitecto</option>
+						<option value="Dibujante">Dibujante</option>
+						<option value="Técnico de Mantenimiento">Técnico de Mantenimiento</option>
+						<option value="Supervisor de Obra">Supervisor de Obra</option>
+						<option value="Operador de Maquinaria">Operador de Maquinaria</option>
+						<option value="Chofer de revolvedora">Chofer de revolvedora</option>
 					</select>
 				</div>
 
@@ -73,8 +73,15 @@ const SidebarCandidatos = () => {
 
         <div className="sidebar-widget">
 					<h3>Sueldo Deseado:</h3>
-					<div className="margin-top-55"></div>
-					<input className="range-slider" type="text" defaultValue="2000" data-slider-currency="$" data-slider-min="1500" data-slider-max="15000" data-slider-step="100" data-slider-value="[1500,15000]"/>
+					<select data-size="7" title="Todas" >
+						<option value="5000">$1,000 - $5,000 MX</option>
+						<option value="10000">$5,000 - $10,000 MX</option>
+						<option value="15000">$10,000 - $15,000 MX</option>
+						<option value="20000">$15,000 - $20,000 MX</option>
+						<option value="30000">$25,000 - $30,000 MX</option>
+						<option value="35000">$30,000 - $35,000 MX</option>
+						<option value="40000">$35,000 - $40,000 MX</option>
+					</select>
 				</div>
 
       </div>

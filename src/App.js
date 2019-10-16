@@ -172,7 +172,7 @@ class App extends Component {
             />
             <Route 
               exact
-              path="/publicar-empleo"
+              path="/publicar-vacante"
               render={(props) => <PublicarEmpleo {...props} candidatos={this.state.candidatos} />}
             />
             <Route 

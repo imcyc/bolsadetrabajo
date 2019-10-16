@@ -20,7 +20,7 @@ const Header = () => {
                 <Link to="/empleos">EMPLEOS</Link>
                 <ul className="dropdown-nav">
                   <li>
-                    <Link to="/publicar-empleo">PUBLICAR EMPLEO</Link>
+                    <Link to="/publicar-vacante">PUBLICAR EMPLEO</Link>
                   </li>
                 </ul>
               </li>
@@ -84,20 +84,20 @@ const Header = () => {
                     <span className="status-indicator" aria-hidden="true"></span>
                   </div>	
                 </div>
-                <ul class="user-menu-small-nav">
+                <ul className="user-menu-small-nav">
                   <li>
                     <Link to="/dashboard">
-                      <i class="icon-material-outline-dashboard"></i> Panel de control
+                      <i className="icon-material-outline-dashboard"></i> Panel de control
                     </Link>
                   </li>
                   <li>
                     <Link to="/configuracion">
-                      <i class="icon-material-outline-settings"></i> Configuracion
+                      <i className="icon-material-outline-settings"></i> Configuracion
                     </Link>
                   </li>
                   <li>
                     <Link to="/">
-                      <i class="icon-material-outline-power-settings-new"></i> Salir
+                      <i className="icon-material-outline-power-settings-new"></i> Salir
                     </Link>
                   </li>
                 </ul>
