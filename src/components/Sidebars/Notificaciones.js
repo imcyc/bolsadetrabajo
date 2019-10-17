@@ -12,8 +12,7 @@ const Notificaciones = () => {
       </div>
 
       <div className="sort-by">
-        <span>Ordenar por:</span>
-        <select className="selectpicker hide-tick">
+        <select>
           <option>Relevantes</option>
           <option>Nuevos</option>
           <option>Viejos</option>
