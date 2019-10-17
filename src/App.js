@@ -26,6 +26,7 @@ class App extends Component {
       persons: [],
       empresas: [],
       candidatos: [],
+      filtrados: [],
       nombre: '',
       email: '',
       password: '',
@@ -81,6 +82,15 @@ class App extends Component {
     console.log(childData);
   };
 
+  filtroCiudad = (e) => {
+    console.log(e.target.value);
+    const ciudad = e.target.value;
+    const candidatos = this.state.candidatos.filter(candidato => candidato.ciudad === ciudad);
+    this.setState({
+      filtrados: candidatos
+    })
+    console.log(this.state.filtrados);
+  }
 
   handlePublicarEmpleo = (event) => {
     event.preventDefault();
@@ -194,7 +204,11 @@ class App extends Component {
             <Route 
               exact
               path="/candidatos"
-              render={(props) => <Candidatos {...props} candidatos={this.state.candidatos} />}
+              render={(props) => <Candidatos {...props} 
+                filtrados={this.state.filtrados}
+                candidatos={this.state.candidatos}
+                filtroCiudad={this.filtroCiudad}  
+                />}
             />
             <Route 
               exact 

@@ -91,7 +91,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/configuracion">
+                    <Link to="/dashboard">
                       <i className="icon-material-outline-settings"></i> Configuracion
                     </Link>
                   </li>

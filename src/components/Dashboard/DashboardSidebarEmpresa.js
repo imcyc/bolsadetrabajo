@@ -19,7 +19,7 @@ const DashboardSidebarEmpresa = (props) => {
                     <div className="dashboard-nav-inner">
                         <ul>
                             <li className="active" onClick={props.sayHello}>
-                              <Link>
+                              <Link to="/dashboard">
                                 <i className="icon-material-outline-dashboard"></i> 
                                 Panel de Control
                               </Link>

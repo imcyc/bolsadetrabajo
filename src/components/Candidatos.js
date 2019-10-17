@@ -4,13 +4,12 @@ import CajaCandidato from './Candidatos/CajaCandidato';
 import Notificaciones from './Sidebars/Notificaciones';
 
 const Candidatos = (props) => {
-  
   return(
     <div>
       <div className="margin-top-90"></div>
       <div className="container">
         <div className="row">
-          <SidebarCandidatos/>
+          <SidebarCandidatos filtroCiudad={props.filtroCiudad}/>
           <div className="col-xl-9 col-lg-8 content-left-offset">
             <h3 className="page-title">Candidatos</h3>
             <Notificaciones/>
