@@ -43,14 +43,14 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nombre de la Vacante:</h5>
-                                                <input name="vacante" type="text" className="with-border" />
+                                                <input name="vacante" type="text" className="with-border" required />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Tipo de vacante:</h5>
-                                                <select name="tipoVacante" data-size="7" title="Select Job Type">
+                                                <select name="tipoVacante" data-size="7" title="Select Job Type" required>
                                                     <option value="Por Temporada">Por Temporada</option>
                                                     <option value="Tiempo Completo">Tiempo Completo</option>
                                                     <option value="Medio Tiempo">Medio Tiempo</option>
@@ -63,7 +63,7 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Categoría:</h5>
-                                                <select name="categoria" data-size="7" title="Categoría" >
+                                                <select name="categoria" data-size="7" title="Categoría" required>
                                                 <option value="Ingeniero Civil">Ingeniero Civil</option>
                                                 <option value="Ingeniero Estructural">Ingeniero Estructural</option>
                                                 <option value="Laboratorista de concreto">Laboratorista de concreto</option>
@@ -82,7 +82,7 @@ const PublicarEmpleo = (props) => {
                                                 <h5>Ubicación:</h5>
                                                 <div className="input-with-icon">
                                                     <div id="autocomplete-container">
-                                                        <input name="ubicacion" id="autocomplete-input" className="with-border" type="text" placeholder="Dirección" />
+                                                        <input name="ubicacion" id="autocomplete-input" className="with-border" type="text" placeholder="Dirección" required />
                                                     </div>
                                                     <i className="icon-material-outline-location-on"></i>
                                                 </div>
@@ -92,7 +92,7 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Ciudad:</h5>
-                                                <select name="ciudad" data-size="7" title="Select Job Type">
+                                                <select name="ciudad" data-size="7" title="Select Job Type" required>
                                                     <option value="Aguascalientes">Aguascalientes</option>
                                                     <option value="Baja California">Baja California</option>
                                                     <option value="Baja California Sur">Baja California Sur</option>
@@ -128,7 +128,7 @@ const PublicarEmpleo = (props) => {
                                                         <div className="input-with-icon">
                                                             <input 
                                                             name="sueldoMin"
-                                                            className="with-border" type="text" placeholder="Min"/>
+                                                            className="with-border" type="text" placeholder="Min" required/>
                                                             <i className="currency">MX</i>
                                                         </div>
                                                     </div>
@@ -136,7 +136,7 @@ const PublicarEmpleo = (props) => {
                                                         <div className="input-with-icon">
                                                             <input 
                                                             name="sueldoMax"
-                                                            className="with-border" type="text" placeholder="Max"/>
+                                                            className="with-border" type="text" placeholder="Max" required/>
                                                             <i className="currency">MX</i>
                                                         </div>
                                                     </div>
@@ -161,7 +161,7 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nivel de estudios mínimo:</h5>
-                                                <select name="estudio" data-size="7" title="Select Job Type">
+                                                <select name="estudio" data-size="7" title="Select Job Type" required>
                                                     <option value="Técnico">Técnico</option>
                                                     <option value="Licenciatura">Licenciatura</option>
                                                     <option value="Maestría">Maestría</option>
@@ -174,35 +174,35 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nombre de la Empresa:</h5>
-                                                <input name="empresa" type="text" className="with-border" />
+                                                <input name="empresa" type="text" className="with-border" required/>
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nombre de Contacto:</h5>
-                                                <input name="contacto" type="text" className="with-border" />
+                                                <input name="contacto" type="text" className="with-border" required/>
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Teléfono:</h5>
-                                                <input name="telefono" type="text" className="with-border" />
+                                                <input name="telefono" type="text" className="with-border" required/>
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Correo Electrónico:</h5>
-                                                <input name="email" type="text" className="with-border" />
+                                                <input name="email" type="text" className="with-border" required/>
                                             </div>
                                         </div>
 
                                         <div className="col-xl-12">
                                             <div className="submit-field">
                                                 <h5>Descripción:</h5>
-                                                <textarea name="descripcion" cols="30" rows="5" className="with-border"></textarea>
+                                                <textarea name="descripcion" cols="30" rows="5" className="with-border" required></textarea>
                                                 {/*
                                                 <div className="uploadButton margin-top-30">
                                                     <input className="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple/>
