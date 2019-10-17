@@ -4,6 +4,7 @@ import CajaCandidato from './Candidatos/CajaCandidato';
 import Notificaciones from './Sidebars/Notificaciones';
 
 const Candidatos = (props) => {
+  
   return(
     <div>
       <div className="margin-top-90"></div>

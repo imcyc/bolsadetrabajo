@@ -18,7 +18,7 @@ const ComoFunciona = () => {
               <div className="icon-box-circle">
                 <div className="icon-box-circle-inner">
                   <i className="icon-line-awesome-lock"></i>
-                  <div className="icon-box-check"><i class="icon-material-outline-check"></i></div>
+                  <div className="icon-box-check"><i className="icon-material-outline-check"></i></div>
                 </div>
               </div>
               <Link to="/registro"><h3>Crear una cuenta</h3></Link>

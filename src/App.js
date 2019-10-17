@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ class App extends Component {
     this.state = {
       isShow: true,
       value: '',
+      persons: [],
       empresas: [
         {
           id: 1,
@@ -43,28 +45,46 @@ class App extends Component {
           email: 'imcyc@imcyc.com'
         }
       ],
-      candidatos: [
-        {
-          id: 1,
-          avatar: 'https://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-demo.jpg',
-          nombre:'Mariela',
-          apellidoPaterno:'Lopez',
-          apellidoMaterno:'Serrano',
-          fechaDeNacimiento:'19/09/1985',
-          estudios:'Licenciatura',
-          titulo:'Ingeniero Civil',
-          jornada:'Tiempo Completo',
-          direccion: 'Av. Siempre Viva 200',
-          ciudad: 'Ciudad de México',
-          telefono:'55555555',
-          email:'emlopez@gmail.com',
-          sueldoMin:'10000',
-          sueldoMax:'15000',
-          descripcion:'Licenciatura en Ingeniería civil con Maestría en estructuras, dispuesta a relocación.'
-        }
-      ]
+      candidatos: [],
+      nombre: '',
+      email: '',
+      password: '',
     };
     this.handlePublicarEmpleo = this.handlePublicarEmpleo.bind(this);
+  }
+
+  componentDidMount() {
+    axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
+      .then(res => {
+        const candidatos = res.data;
+        this.setState({ candidatos });
+      })
+  }
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const user = {
+      nombre: this.state.nombre,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertuser.php`, { user })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
+    axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
+      .then(res => {
+        const candidatos = res.data;
+        this.setState({ candidatos });
+      })
   }
 
   verEmpleo = () => {
@@ -74,6 +94,7 @@ class App extends Component {
   callbackFunction = (childData) => {
     console.log(childData);
   };
+
 
   handlePublicarEmpleo = (event) => {
     event.preventDefault();
@@ -108,33 +129,40 @@ class App extends Component {
 
   handlePublicarCandidato = (event) => {
     event.preventDefault();
-    const candidatos = this.state.candidatos.slice(0);
-    const idex = Math.floor((Math.random() * 100) + 1);
 
-    candidatos.push({
-      id: idex,
-      avatar: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
-      nombre: event.target.nombre.value,
-      apellidoPaterno: event.target.apellidoPaterno.value,
-      apellidoMaterno: event.target.apellidoMaterno.value,
-      fechaDeNacimiento: event.target.fechaDeNacimiento.value,
-      estudios: event.target.estudios.value,
-      titulo: event.target.titulo.value,
-      jornada: event.target.jornada.value,
-      direccion: event.target.direccion.value,
-      ciudad: event.target.ciudad.value,
-      telefono: event.target.telefono.value,
-      email: event.target.email.value,
-      sueldoMin: event.target.sueldoMin.value,
-      sueldoMax: event.target.sueldoMax.value,
-      descripcion: event.target.descripcion.value,
-    })
+    const candidato = {
+        avatar: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
+        nombre: event.target.nombre.value,
+        apellidoPaterno: event.target.apellidoPaterno.value,
+        apellidoMaterno: event.target.apellidoMaterno.value,
+        fechaDeNacimiento: event.target.fechaDeNacimiento.value,
+        estudios: event.target.estudios.value,
+        titulo: event.target.titulo.value,
+        jornada: event.target.jornada.value,
+        direccion: event.target.direccion.value,
+        ciudad: event.target.ciudad.value,
+        telefono: event.target.telefono.value,
+        email: event.target.email.value,
+        sueldoMin: event.target.sueldoMin.value,
+        sueldoMax: event.target.sueldoMax.value,
+        descripcion: event.target.descripcion.value,
+    };
 
-    this.setState({
-      candidatos: candidatos,
-    });
+    console.log(candidato);
 
-    window.location.href = "#/candidatos";
+    axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertcandidato.php`, { candidato })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
+    axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
+      .then(res => {
+        const candidatos = res.data;
+        this.setState({ candidatos });
+      })
+
+    //xwindow.location.href = "#/candidatos";
   }
 
   render(){
@@ -142,6 +170,20 @@ class App extends Component {
       <HashRouter basename='/'>
         <div id="wrapper" className="App">
           <Header/>
+    {/*
+          <form onSubmit={this.handleSubmit} style={{marginTop: '90px', background: '#333333'}}>
+            <label>
+              Person Name:
+              <input type="text" name="nombre" onChange={this.handleChange} />
+              <input type="text" name="email" onChange={this.handleChange} />
+              <input type="text" name="password" onChange={this.handleChange} />
+            </label>
+            <button type="submit">Add</button>
+          </form>
+          <ul>
+            { this.state.candidatos.map(candidato => <li>{candidato.nombre}</li>)}
+          </ul>
+    */}
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/registro" component={Registro} />
@@ -200,6 +242,7 @@ class App extends Component {
               component={Home}
             />
           </Switch>
+          
           <Footer/>
         </div>
       </HashRouter>

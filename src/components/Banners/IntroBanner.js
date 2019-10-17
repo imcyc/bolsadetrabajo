@@ -10,7 +10,7 @@ const IntroBanner = () => {
               <h3>
                 <strong>Bolsa de trabajo especializada de la Construcción</strong>
                 <br/>
-                <span>Encuentra la vacante/candidato que estás buscando <strong class="color">IMCYC</strong> compartir el conocimiento.</span>
+                <span>Encuentra la vacante/candidato que estás buscando <strong className="color">IMCYC</strong> compartir el conocimiento.</span>
               </h3>
             </div>
           </div>
