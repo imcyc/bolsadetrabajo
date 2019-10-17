@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bolsadetrabajo/static/css/main.cfda8877.chunk.css",
-    "main.js": "/bolsadetrabajo/static/js/main.0b2caf29.chunk.js",
-    "main.js.map": "/bolsadetrabajo/static/js/main.0b2caf29.chunk.js.map",
+    "main.js": "/bolsadetrabajo/static/js/main.656dcc86.chunk.js",
+    "main.js.map": "/bolsadetrabajo/static/js/main.656dcc86.chunk.js.map",
     "runtime-main.js": "/bolsadetrabajo/static/js/runtime-main.6662564b.js",
     "runtime-main.js.map": "/bolsadetrabajo/static/js/runtime-main.6662564b.js.map",
-    "static/js/2.3d5cb307.chunk.js": "/bolsadetrabajo/static/js/2.3d5cb307.chunk.js",
-    "static/js/2.3d5cb307.chunk.js.map": "/bolsadetrabajo/static/js/2.3d5cb307.chunk.js.map",
+    "static/js/2.74c20b22.chunk.js": "/bolsadetrabajo/static/js/2.74c20b22.chunk.js",
+    "static/js/2.74c20b22.chunk.js.map": "/bolsadetrabajo/static/js/2.74c20b22.chunk.js.map",
     "index.html": "/bolsadetrabajo/index.html",
-    "precache-manifest.6017737f2b6df44f274683deb32812e1.js": "/bolsadetrabajo/precache-manifest.6017737f2b6df44f274683deb32812e1.js",
+    "precache-manifest.2db94f823ea87ba8d14f6ecdacc41063.js": "/bolsadetrabajo/precache-manifest.2db94f823ea87ba8d14f6ecdacc41063.js",
     "service-worker.js": "/bolsadetrabajo/service-worker.js",
     "static/css/main.cfda8877.chunk.css.map": "/bolsadetrabajo/static/css/main.cfda8877.chunk.css.map",
     "static/media/logo-blanco.svg": "/bolsadetrabajo/static/media/logo-blanco.580ea230.svg",
@@ -16,8 +16,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6662564b.js",
-    "static/js/2.3d5cb307.chunk.js",
+    "static/js/2.74c20b22.chunk.js",
     "static/css/main.cfda8877.chunk.css",
-    "static/js/main.0b2caf29.chunk.js"
+    "static/js/main.656dcc86.chunk.js"
   ]
 }

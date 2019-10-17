@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79cc5f9e40e6cc9b056ea715a3a2c35c",
+    "revision": "94d37388fb297860d8a1af83c78aacd9",
     "url": "/bolsadetrabajo/index.html"
   },
   {
-    "revision": "0d57086a4e13e7e233f3",
+    "revision": "b95b780283c449456f9b",
     "url": "/bolsadetrabajo/static/css/main.cfda8877.chunk.css"
   },
   {
-    "revision": "a33cb27c7b50ceb6566f",
-    "url": "/bolsadetrabajo/static/js/2.3d5cb307.chunk.js"
+    "revision": "c415503424db825edc29",
+    "url": "/bolsadetrabajo/static/js/2.74c20b22.chunk.js"
   },
   {
-    "revision": "0d57086a4e13e7e233f3",
-    "url": "/bolsadetrabajo/static/js/main.0b2caf29.chunk.js"
+    "revision": "b95b780283c449456f9b",
+    "url": "/bolsadetrabajo/static/js/main.656dcc86.chunk.js"
   },
   {
     "revision": "aa443f338a52089d4771",
