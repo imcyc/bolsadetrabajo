@@ -2667,7 +2667,7 @@ body #backtotop a {
 	padding: 15px 25px;
 	position: relative;
 	line-height: 28px;
-	min-height: 59px;
+	min-height: 80px;
 }
 
 .notify-box label {
@@ -2730,7 +2730,8 @@ body #backtotop a {
 	flex-wrap: wrap;
 	align-items: flex-start;
     position: relative;
-    float: right;
+	float: right;
+	margin-top: -8px;
 }
 
 /* Notify Box Media Queries*/
