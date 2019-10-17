@@ -2,6 +2,8 @@ import React from 'react';
 import TituloBarra from './Banners/TituloBarra';
 import { Link } from "react-router-dom";
 
+import ComoFunciona from '../components/Banners/ComoFunciona';
+
 const Login = () => {
   return (
     <div>
@@ -31,12 +33,13 @@ const Login = () => {
                 <Link to="#" className="forgot-password">Olvidó su contraseña?</Link>
               </form>
               
-              <button className="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Ingresar <i className="icon-material-outline-arrow-right-alt"></i></button>
+              <Link to="/candidatos" className="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form" style={{color:'#000',backgroundColor:'#444'}}>Ingresar <i className="icon-material-outline-arrow-right-alt"></i></Link>
 
             </div>
           </div>
         </div>
       </div>
+      <ComoFunciona/>
     </div>
   );
 }

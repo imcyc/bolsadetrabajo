@@ -5,30 +5,37 @@ const SidebarEmpleos = () => {
     <div className="col-xl-3 col-lg-4">
       <div className="sidebar-container">
 
-        <div className="sidebar-widget">
-					<h3>Ubicación:</h3>
-					<div className="input-with-icon">
-						<div id="autocomplete-container">
-							<input id="autocomplete-input" type="text" placeholder="Su Ubicación" />
-						</div>
-						<i className="icon-material-outline-location-on"></i>
-					</div>
+				<div className="sidebar-widget">
+						<h3>Ubicación:</h3>
+						<select name="ciudad" data-size="7" title="Select Job Type" required>
+								<option value="Aguascalientes">Aguascalientes</option>
+								<option value="Baja California">Baja California</option>
+								<option value="Baja California Sur">Baja California Sur</option>
+								<option value="Campeche">Campeche</option>
+								<option value="Coahuila">Coahuila</option>
+								<option value="Colima">Colima</option>
+								<option value="Chiapas">Chiapas</option>
+								<option value="Chihuahua">Chihuahua</option>
+								<option value="Ciudad de México">Ciudad de México</option>
+								<option value="Durango">Durango</option>
+								<option value="Estado de México">Estado de México</option>
+								<option value="Guanajuato">Guanajuato</option>
+								<option value="Guerrero">Guerrero</option>
+								<option value="Hidalgo">Hidalgo</option>
+								<option value="Jalisco">Jalisco</option>
+								<option value="Michoacán">Michoacán</option>
+								<option value="Morelos">Morelos</option>
+								<option value="Nayarit">Nayarit</option>
+								<option value="Nuevo León">Nuevo León</option>
+								<option value="Oaxaca">Oaxaca</option>
+								<option value="Puebla">Puebla</option>
+								<option value="Querétaro">Querétaro</option>
+								<option value="Quintana Roo">Quintana Roo</option>
+						</select>
 				</div>
 
-        <div className="sidebar-widget">
-					<h3>Palabras clave:</h3>
-					<div className="keywords-container">
-						<div className="keyword-input-container">
-							<input type="text" className="keyword-input" placeholder="e.g. Ingeniero Civil"/>
-							<button className="keyword-input-button ripple-effect"><i className="icon-material-outline-add"></i></button>
-						</div>
-						<div className="keywords-list"></div>
-						<div className="clearfix"></div>
-					</div>
-				</div>
-
-        <div className="sidebar-widget">
-					<h3>Categoría:</h3>
+				<div className="sidebar-widget">
+					<h3>Profesión/Especialidad:</h3>
 					<select data-size="7" title="Todas" >
 						<option value="Ingeniero Civil">Ingeniero Civil</option>
 						<option value="Ingeniero Estructural">Ingeniero Estructural</option>
@@ -42,7 +49,7 @@ const SidebarEmpleos = () => {
 					</select>
 				</div>
 
-        <div className="sidebar-widget">
+				<div className="sidebar-widget">
 					<h3>Tipo:</h3>
 					<div className="switches-list">
 						<div className="switch-container">
@@ -68,6 +75,18 @@ const SidebarEmpleos = () => {
 						<div className="switch-container">
 							<label className="switch"><input type="checkbox"/><span className="switch-button"></span> Temporal</label>
 						</div>
+					</div>
+				</div>
+
+        <div className="sidebar-widget">
+					<h3>Palabras clave:</h3>
+					<div className="keywords-container">
+						<div className="keyword-input-container">
+							<input type="text" className="keyword-input" placeholder="e.g. Ingeniero Civil"/>
+							<button className="keyword-input-button ripple-effect"><i className="icon-material-outline-add"></i></button>
+						</div>
+						<div className="keywords-list"></div>
+						<div className="clearfix"></div>
 					</div>
 				</div>
 

@@ -17,7 +17,7 @@ const Header = () => {
                 <Link to="/" className="current">INICIO</Link>
               </li>
               <li>
-                <Link to="/empleos">EMPLEOS</Link>
+                <Link to="/empleos">OFERTAS DE EMPLEO</Link>
                 <ul className="dropdown-nav">
                   <li>
                     <Link to="/publicar-vacante">PUBLICAR EMPLEO</Link>

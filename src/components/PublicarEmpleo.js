@@ -161,7 +161,7 @@ const PublicarEmpleo = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nivel de estudios mínimo:</h5>
-                                                <select name="estudios" data-size="7" title="Select Job Type">
+                                                <select name="estudio" data-size="7" title="Select Job Type">
                                                     <option value="Técnico">Técnico</option>
                                                     <option value="Licenciatura">Licenciatura</option>
                                                     <option value="Maestría">Maestría</option>

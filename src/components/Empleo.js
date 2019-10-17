@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Empleo = (props) => {
 
-  var id = parseInt(props.match.params.id);
+  var id = props.match.params.id;
   
   var marvelHeroes =  props.empresas.filter((empresa) => {
     return empresa.id === id;

@@ -3,7 +3,6 @@ import axios from 'axios';
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
 import Login from './components/Login';
 import Registro from './components/Registro';
 import Empleos from './components/Empleos';
@@ -25,26 +24,7 @@ class App extends Component {
       isShow: true,
       value: '',
       persons: [],
-      empresas: [
-        {
-          id: 1,
-          logo: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
-          vacante:'Ingeniero Civil',
-          tipoVacante: 'Tiempo completo',
-          categoria: 'Ingeniero Civil',
-          ubicacion: 'Avenida Corazón Fiel 102',
-          ciudad: 'CDMX',
-          sueldoMin: '2000',
-          sueldoMax: '5000',
-          estudios: 'Licenciatura',
-          empresa: 'CEMEX',
-          contacto: 'Julia lópez',
-          descripcion: 'Se solicita ingeniero civil recién egresado para laborar en empresa especializada.',
-          tiempo: '15/10/2019',
-          telefono: '(55) 5322 5740',
-          email: 'imcyc@imcyc.com'
-        }
-      ],
+      empresas: [],
       candidatos: [],
       nombre: '',
       email: '',
@@ -58,6 +38,12 @@ class App extends Component {
       .then(res => {
         const candidatos = res.data;
         this.setState({ candidatos });
+      })
+    
+    axios.get(`http://18.219.47.222/apis/bolsadetrabajo/empresas.php`)
+      .then(res => {
+        const empresas = res.data;
+        this.setState({ empresas });
       })
   }
 
@@ -98,11 +84,8 @@ class App extends Component {
 
   handlePublicarEmpleo = (event) => {
     event.preventDefault();
-    const empresas = this.state.empresas.slice(0);
-    const idex = Math.floor((Math.random() * 100) + 1);
 
-    empresas.push({
-      id: idex,
+    const empresa = {
       logo: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
       vacante: event.target.vacante.value,
       tipoVacante: event.target.tipoVacante.value,
@@ -111,27 +94,38 @@ class App extends Component {
       ciudad: event.target.ciudad.value,
       sueldoMin: event.target.sueldoMin.value,
       sueldoMax: event.target.sueldoMax.value,
-      estudios: event.target.estudios.value,
+      estudio: event.target.estudio.value,
       empresa: event.target.empresa.value,
       contacto: event.target.contacto.value,
       descripcion: event.target.descripcion.value,
       tiempo: '15/10/2019',
       telefono: event.target.telefono.value,
       email: event.target.email.value
-    })
+    }
 
-    this.setState({
-      empresas: empresas,
-    });
+    console.log(empresa);
 
-    window.location.href = "#/empleos";
+    axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertempresa.php`, { empresa })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
+    axios.get(`http://18.219.47.222/apis/bolsadetrabajo/empresas.php`)
+      .then(res => {
+        const candidatos = res.data;
+        this.setState({ candidatos });
+      })
+
+    window.scrollTo(0, 0);
+    alert('OFERTA AGREGADA CON ÉXITO!!!')
   }
 
   handlePublicarCandidato = (event) => {
     event.preventDefault();
 
     const candidato = {
-        avatar: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
+        avatar: 'https://image.flaticon.com/icons/png/512/64/64572.png',
         nombre: event.target.nombre.value,
         apellidoPaterno: event.target.apellidoPaterno.value,
         apellidoMaterno: event.target.apellidoMaterno.value,
@@ -148,8 +142,6 @@ class App extends Component {
         descripcion: event.target.descripcion.value,
     };
 
-    console.log(candidato);
-
     axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertcandidato.php`, { candidato })
       .then(res => {
         console.log(res);
@@ -162,7 +154,9 @@ class App extends Component {
         this.setState({ candidatos });
       })
 
-    //xwindow.location.href = "#/candidatos";
+      
+    window.scrollTo(0, 0);
+    alert('CANDIDATO AGREGADO CON ÉXITO!!!')
   }
 
   render(){
@@ -205,6 +199,7 @@ class App extends Component {
             <Route 
               exact 
               path="/candidato/:id"
+              
               render={(props) => <Candidato {...props} candidatos={this.state.candidatos} />}
             />
             <Route 
@@ -239,7 +234,7 @@ class App extends Component {
             <Route 
               exact
               path="/"
-              component={Home}
+              component={Login}
             />
           </Switch>
           
