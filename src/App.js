@@ -38,20 +38,29 @@ class App extends Component {
           empresa: 'CEMEX',
           contacto: 'Julia lópez',
           descripcion: 'Se solicita ingeniero civil recién egresado para laborar en empresa especializada.',
-          tiempo: '15/10/2019'
+          tiempo: '15/10/2019',
+          telefono: '(55) 5322 5740',
+          email: 'imcyc@imcyc.com'
         }
       ],
       candidatos: [
         {
           id: 1,
           avatar: 'https://profilepicturesdp.com/wp-content/uploads/2018/07/profile-picture-demo.jpg',
-          nombre:'Mariela Lopez Serrano',
-          tipoVacante: 'Tiempo completo',
-          categoria: 'Ingeniero Civil',
-          ubicacion: 'Avenida Corazón Fiel 102',
-          sueldoMin: '2000',
-          sueldoMax: '5000',
-          estudios: 'Licenciatura',
+          nombre:'Mariela',
+          apellidoPaterno:'Lopez',
+          apellidoMaterno:'Serrano',
+          fechaDeNacimiento:'19/09/1985',
+          estudios:'Licenciatura',
+          titulo:'Ingeniero Civil',
+          jornada:'Tiempo Completo',
+          direccion: 'Av. Siempre Viva 200',
+          ciudad: 'Ciudad de México',
+          telefono:'55555555',
+          email:'emlopez@gmail.com',
+          sueldoMin:'10000',
+          sueldoMax:'15000',
+          descripcion:'Licenciatura en Ingeniería civil con Maestría en estructuras, dispuesta a relocación.'
         }
       ]
     };
@@ -69,9 +78,10 @@ class App extends Component {
   handlePublicarEmpleo = (event) => {
     event.preventDefault();
     const empresas = this.state.empresas.slice(0);
+    const idex = Math.floor((Math.random() * 100) + 1);
 
     empresas.push({
-      id: 5,
+      id: idex,
       logo: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
       vacante: event.target.vacante.value,
       tipoVacante: event.target.tipoVacante.value,
@@ -84,12 +94,47 @@ class App extends Component {
       empresa: event.target.empresa.value,
       contacto: event.target.contacto.value,
       descripcion: event.target.descripcion.value,
-      tiempo: '15/10/2019'
+      tiempo: '15/10/2019',
+      telefono: event.target.telefono.value,
+      email: event.target.email.value
     })
 
     this.setState({
       empresas: empresas,
     });
+
+    window.location.href = "#/empleos";
+  }
+
+  handlePublicarCandidato = (event) => {
+    event.preventDefault();
+    const candidatos = this.state.candidatos.slice(0);
+    const idex = Math.floor((Math.random() * 100) + 1);
+
+    candidatos.push({
+      id: idex,
+      avatar: 'http://www.imcyc.com/wp-content/uploads/2017/07/logo_200.png',
+      nombre: event.target.nombre.value,
+      apellidoPaterno: event.target.apellidoPaterno.value,
+      apellidoMaterno: event.target.apellidoMaterno.value,
+      fechaDeNacimiento: event.target.fechaDeNacimiento.value,
+      estudios: event.target.estudios.value,
+      titulo: event.target.titulo.value,
+      jornada: event.target.jornada.value,
+      direccion: event.target.direccion.value,
+      ciudad: event.target.ciudad.value,
+      telefono: event.target.telefono.value,
+      email: event.target.email.value,
+      sueldoMin: event.target.sueldoMin.value,
+      sueldoMax: event.target.sueldoMax.value,
+      descripcion: event.target.descripcion.value,
+    })
+
+    this.setState({
+      candidatos: candidatos,
+    });
+
+    window.location.href = "#/candidatos";
   }
 
   render(){
@@ -138,12 +183,16 @@ class App extends Component {
             <Route 
               exact
               path="/publicar-vacante"
-              render={(props) => <PublicarEmpleo {...props} candidatos={this.state.candidatos} handlePublicarEmpleo={this.handlePublicarEmpleo} />}
+              render={(props) => <PublicarEmpleo {...props} 
+              candidatos={this.state.candidatos} 
+              handlePublicarEmpleo={this.handlePublicarEmpleo} />}
             />
             <Route 
               exact
               path="/publicar-candidato"
-              render={(props) => <PublicarCandidato {...props} candidatos={this.state.candidatos} />}
+              render={(props) => <PublicarCandidato {...props} 
+              candidatos={this.state.candidatos}
+              handlePublicarCandidato={this.handlePublicarCandidato} />}
             />
             <Route 
               exact

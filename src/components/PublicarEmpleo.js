@@ -185,6 +185,20 @@ const PublicarEmpleo = (props) => {
                                             </div>
                                         </div>
 
+                                        <div className="col-xl-4">
+                                            <div className="submit-field">
+                                                <h5>Teléfono:</h5>
+                                                <input name="telefono" type="text" className="with-border" />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-xl-4">
+                                            <div className="submit-field">
+                                                <h5>Correo Electrónico:</h5>
+                                                <input name="email" type="text" className="with-border" />
+                                            </div>
+                                        </div>
+
                                         <div className="col-xl-12">
                                             <div className="submit-field">
                                                 <h5>Descripción:</h5>

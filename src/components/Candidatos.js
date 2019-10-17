@@ -15,7 +15,7 @@ const Candidatos = (props) => {
             <Notificaciones/>
             <div className="freelancers-container freelancers-list-layout margin-top-35">
               {props.candidatos.map(candidato => (
-                <CajaCandidato key={candidato.id} id={candidato.id} avatar={candidato.avatar} nombre={candidato.nombre} telefono={candidato.telefono} email={candidato.email} direccion={candidato.direccion} experiencia={candidato.experiencia} titulo={candidato.titulo} estudios={candidato.estudios} nacionalidad={candidato.nacionalidad} lugar={candidato.lugar} tipo={candidato.tipo} sueldo={candidato.sueldo}/>
+                <CajaCandidato key={candidato.id} id={candidato.id} avatar={candidato.avatar} nombre={candidato.nombre} apellidoPaterno={candidato.apellidoPaterno} apellidoMaterno={candidato.apellidoMaterno} fechaDeNacimiento={candidato.fechaDeNacimiento} estudios={candidato.estudios} titulo={candidato.titulo} jornada={candidato.jornada} direccion={candidato.direccion} ciudad={candidato.ciudad} telefono={candidato.telefono} email={candidato.email} sueldoMin={candidato.sueldoMin} sueldoMax={candidato.sueldoMax} descripcion={candidato.descripcion}/>
               ))}
             </div>
           </div>

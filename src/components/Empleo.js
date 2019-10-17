@@ -84,6 +84,16 @@ const Empleo = (props) => {
                         <span>Publicado</span>
                         <h5>{Heroe.tiempo}</h5>
                       </li>
+                      <li>
+                        <i className="icon-material-outline-book"></i>
+                        <span>Teléfono Contacto</span>
+                        <h5>{Heroe.telefono}</h5>
+                      </li>
+                      <li>
+                        <i className="icon-material-outline-email"></i>
+                        <span>Correo E. Contacto</span>
+                        <h5>{Heroe.email}</h5>
+                      </li>
                     </ul>
                   </div>
                 </div>

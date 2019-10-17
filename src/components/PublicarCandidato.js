@@ -26,6 +26,7 @@ const PublicarCandidato = (props) => {
                         </nav>
                     </div>
                     <div className="row">
+                    <form onSubmit={props.handlePublicarCandidato}>
                         <div className="col-xl-12">
                             <div className="dashboard-box margin-top-0">
                                 <div className="headline">
@@ -40,40 +41,40 @@ const PublicarCandidato = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Nombre(s):</h5>
-                                                <input type="text" className="with-border" />
+                                                <input name="nombre" type="text" className="with-border" />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Apellido Paterno:</h5>
-                                                <input type="text" className="with-border" />
+                                                <input name="apellidoPaterno" type="text" className="with-border" />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Apellido Materno:</h5>
-                                                <input type="text" className="with-border" />
+                                                <input name="apellidoMaterno" type="text" className="with-border" />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Fecha de Nacimiento:</h5>
-                                                <input type="date" className="with-border" />
+                                                <input name="fechaDeNacimiento" type="date" className="with-border" />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Último nivel de estudios:</h5>
-                                                <select data-size="7" title="Select Job Type">
-                                                    <option>Técnico</option>
-                                                    <option>Licenciatura</option>
-                                                    <option>Maestría</option>
-                                                    <option>Doctorado</option>
-                                                    <option>Otro</option>
+                                                <select name="estudios" data-size="7" title="Select Job Type">
+                                                    <option value="Técnico">Técnico</option>
+                                                    <option value="Licenciatura">Licenciatura</option>
+                                                    <option value="Maestría">Maestría</option>
+                                                    <option value="Doctorado">Doctorado</option>
+                                                    <option value="Otro">Otro</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -81,7 +82,7 @@ const PublicarCandidato = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Título Profesional:</h5>
-                                                <select data-size="7" title="Categoría" >
+                                                <select name="titulo" data-size="7" title="Categoría" >
                                                 <option value="Ingeniero Civil">Ingeniero Civil</option>
                                                 <option value="Ingeniero Estructural">Ingeniero Estructural</option>
                                                 <option value="Laboratorista de concreto">Laboratorista de concreto</option>
@@ -98,12 +99,12 @@ const PublicarCandidato = (props) => {
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Tipo de jornada:</h5>
-                                                <select data-size="7" title="Select Job Type">
-                                                    <option>Por Temporada</option>
-                                                    <option>Tiempo Completo</option>
-                                                    <option>Medio Tiempo</option>
-                                                    <option>Prácticas Profesionales</option>
-                                                    <option>Temporal</option>
+                                                <select name="jornada" data-size="7" title="Select Job Type">
+                                                    <option value="Por Temporada">Por Temporada</option>
+                                                    <option value="Tiempo Completo">Tiempo Completo</option>
+                                                    <option value="Medio Tiempo">Medio Tiempo</option>
+                                                    <option value="Prácticas Profesionales">Prácticas Profesionales</option>
+                                                    <option value="Temporal">Temporal</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -113,7 +114,7 @@ const PublicarCandidato = (props) => {
                                                 <h5>Dirección:</h5>
                                                 <div className="input-with-icon">
                                                     <div id="autocomplete-container">
-                                                        <input id="autocomplete-input" className="with-border" type="text" placeholder="Dirección" />
+                                                        <input name="direccion" id="autocomplete-input" className="with-border" type="text" placeholder="Dirección" />
                                                     </div>
                                                     <i className="icon-material-outline-location-on"></i>
                                                 </div>
@@ -122,15 +123,46 @@ const PublicarCandidato = (props) => {
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
+                                                <h5>Ciudad:</h5>
+                                                <select name="ciudad" data-size="7" title="Select Job Type">
+                                                    <option value="Aguascalientes">Aguascalientes</option>
+                                                    <option value="Baja California">Baja California</option>
+                                                    <option value="Baja California Sur">Baja California Sur</option>
+                                                    <option value="Campeche">Campeche</option>
+                                                    <option value="Coahuila">Coahuila</option>
+                                                    <option value="Colima">Colima</option>
+                                                    <option value="Chiapas">Chiapas</option>
+                                                    <option value="Chihuahua">Chihuahua</option>
+                                                    <option value="Ciudad de México">Ciudad de México</option>
+                                                    <option value="Durango">Durango</option>
+                                                    <option value="Estado de México">Estado de México</option>
+                                                    <option value="Guanajuato">Guanajuato</option>
+                                                    <option value="Guerrero">Guerrero</option>
+                                                    <option value="Hidalgo">Hidalgo</option>
+                                                    <option value="Jalisco">Jalisco</option>
+                                                    <option value="Michoacán">Michoacán</option>
+                                                    <option value="Morelos">Morelos</option>
+                                                    <option value="Nayarit">Nayarit</option>
+                                                    <option value="Nuevo León">Nuevo León</option>
+                                                    <option value="Oaxaca">Oaxaca</option>
+                                                    <option value="Puebla">Puebla</option>
+                                                    <option value="Querétaro">Querétaro</option>
+                                                    <option value="Quintana Roo">Quintana Roo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="col-xl-4">
+                                            <div className="submit-field">
                                                 <h5>Teléfono:</h5>
-                                                <input type="text" className="with-border" />
+                                                <input name="telefono" type="text" className="with-border" />
                                             </div>
                                         </div>
 
                                         <div className="col-xl-4">
                                             <div className="submit-field">
                                                 <h5>Correo Electrónico:</h5>
-                                                <input type="text" className="with-border" />
+                                                <input name="email" type="text" className="with-border" />
                                             </div>
                                         </div>
 
@@ -140,13 +172,13 @@ const PublicarCandidato = (props) => {
                                                 <div className="row">
                                                     <div className="col-xl-6">
                                                         <div className="input-with-icon">
-                                                            <input className="with-border" type="text" placeholder="Min"/>
+                                                            <input name="sueldoMin" className="with-border" type="text" placeholder="Min"/>
                                                             <i className="currency">MX</i>
                                                         </div>
                                                     </div>
                                                     <div className="col-xl-6">
                                                         <div className="input-with-icon">
-                                                            <input className="with-border" type="text" placeholder="Max"/>
+                                                            <input name="sueldoMax" className="with-border" type="text" placeholder="Max"/>
                                                             <i className="currency">MX</i>
                                                         </div>
                                                     </div>
@@ -157,7 +189,7 @@ const PublicarCandidato = (props) => {
                                         <div className="col-xl-12">
                                             <div className="submit-field">
                                                 <h5>Descripción de habilidades y/o experiencia:</h5>
-                                                <textarea cols="30" rows="5" className="with-border"></textarea>
+                                                <textarea name="descripcion" cols="30" rows="5" className="with-border"></textarea>
                                                 <div className="uploadButton margin-top-30">
                                                     <input className="uploadButton-input" type="file" accept="image/*, application/pdf" id="upload" multiple/>
                                                     <label className="uploadButton-button ripple-effect" htmlFor="upload">Subir Archivo</label>
@@ -167,9 +199,9 @@ const PublicarCandidato = (props) => {
                                         </div>
 
                                         <div className="col-xl-12">
-                                            <Link to='/dashboard' className="button ripple-effect big margin-top-10 margin-bottom-10">
+                                            <button type="submit" className="button ripple-effect big margin-top-10 margin-bottom-10">
                                                 <i className="icon-feather-plus"></i> Publicar Perfil
-                                            </Link>
+                                            </button>
                                         </div>
 
                                     </div>
@@ -177,7 +209,7 @@ const PublicarCandidato = (props) => {
                             </div>
                         </div>
 
-                        
+                        </form>
 
                     </div>
                 </div>

@@ -9,6 +9,7 @@ const CajaCandidato = (props) => {
           pathname: `/candidato/${props.id}`
         }}
         className="job-listing"
+        style={{width: '100%'}}
       >
     <div className="freelancer">
       <div className="freelancer-overview">
@@ -21,7 +22,7 @@ const CajaCandidato = (props) => {
         </div>
         <div className="freelancer-name">
           <h4>
-            <Link to={{pathname: `/candidato/${props.id}`}}>{props.nombre} <img className="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top" /></Link>
+            <Link to={{pathname: `/candidato/${props.id}`}}>{props.nombre}, {props.apellidoPaterno} {props.apellidoMaterno}<img className="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top" /></Link>
           </h4>
           <span>{props.titulo}</span>
           <div className="freelancer-rating">
@@ -29,12 +30,12 @@ const CajaCandidato = (props) => {
           </div>
         </div>
       </div>
-      <div className="freelancer-details">
+      <div className="freelancer-details" style={{display: 'flex',flexDirection: 'column',}}>
         <div className="freelancer-details-list">
-          <ul>
-            <li>Ubicación <strong><i className="icon-material-outline-location-on"></i> {props.lugar}</strong></li>
-            <li>Sueldo <strong>{props.sueldo}</strong></li>
-            <li>Experiencia <strong>{props.experiencia}</strong></li>
+          <ul style={{display: 'flex',flexDirection: 'column',width: '100%'}}>
+            <li><i className="icon-material-outline-location-on"></i> Ubicación <strong>{props.ciudad}</strong></li>
+            <li><i className="icon-material-outline-location-on"></i> Sueldo <strong>${props.sueldoMin} MX - ${props.sueldoMax} MX</strong></li>
+            <li><i className="icon-material-outline-location-on"></i> Estudios <strong>{props.estudios}</strong></li>
           </ul>
         </div>
         <Link to={{pathname: `/candidato/${props.id}`}} className="button button-sliding-icon ripple-effect">Ver Candidato <i className="icon-material-outline-arrow-right-alt"></i></Link>
