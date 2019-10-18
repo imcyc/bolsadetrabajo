@@ -9,6 +9,8 @@ const Empleo = (props) => {
     return empresa.id === id;
   });
 
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
   return(
     
     <div>

@@ -6,7 +6,7 @@ import Notificaciones from './Sidebars/Notificaciones';
 const Candidatos = (props) => {
   return(
     <div>
-      <div className="margin-top-90"></div>
+      <div className="margin-top-30"></div>
       <div className="container">
         <div className="row">
           <SidebarCandidatos filtroCiudad={props.filtroCiudad}/>

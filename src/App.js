@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch, withRouter } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -23,6 +23,8 @@ class App extends Component {
     this.state = {
       isShow: true,
       value: '',
+      registrado: false,
+      user: null,
       persons: [],
       empresas: [],
       candidatos: [],
@@ -46,6 +48,8 @@ class App extends Component {
         const empresas = res.data;
         this.setState({ empresas });
       })
+
+    console.log(this.state.user);
   }
 
   handleChange = event => {
@@ -169,28 +173,60 @@ class App extends Component {
     alert('CANDIDATO AGREGADO CON ÉXITO!!!')
   }
 
+  handleSignIn = (event) => {
+    event.preventDefault();
+    let emailaddress = event.target.emailaddress.value;
+    let password = event.target.password.value;
+    this.setState({
+      user: {
+        emailaddress,
+        password
+      }
+    })
+
+    console.log(this.state.user);
+  }
+
+  handleRegistro = (event) => {
+    event.preventDefault();
+    let emailaddress = event.target.emailaddress.value;
+    let password = event.target.password.value;
+    this.setState({
+      user: {
+        emailaddress,
+        password
+      },
+      registrado: true
+    })
+    console.log(this.state.user);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  signOut() {
+    this.setState({user: null})
+  }
+
   render(){
     return (
       <HashRouter basename='/'>
         <div id="wrapper" className="App">
-          <Header/>
-    {/*
-          <form onSubmit={this.handleSubmit} style={{marginTop: '90px', background: '#333333'}}>
-            <label>
-              Person Name:
-              <input type="text" name="nombre" onChange={this.handleChange} />
-              <input type="text" name="email" onChange={this.handleChange} />
-              <input type="text" name="password" onChange={this.handleChange} />
-            </label>
-            <button type="submit">Add</button>
-          </form>
-          <ul>
-            { this.state.candidatos.map(candidato => <li>{candidato.nombre}</li>)}
-          </ul>
-    */}
+          <Header user={this.state.user}/>
           <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/registro" component={Registro} />
+            <Route 
+              exact 
+              path="/login" 
+              render={(props) => <Login {...props} handleSignIn={this.handleSignIn} />}
+            />
+            
+            <Route 
+              exact 
+              path="/registro" 
+              render={(props) => <Registro {...props}
+                handleRegistro={this.handleRegistro}
+                registrado={this.state.registrado}
+                usuario={this.state.user}
+                />}
+            />
             <Route 
               exact
               path="/empleos"
@@ -213,7 +249,6 @@ class App extends Component {
             <Route 
               exact 
               path="/candidato/:id"
-              
               render={(props) => <Candidato {...props} candidatos={this.state.candidatos} />}
             />
             <Route 
@@ -248,7 +283,7 @@ class App extends Component {
             <Route 
               exact
               path="/"
-              component={Login}
+              render={(props) => <Login {...props} handleSignIn={this.handleSignIn} />}
             />
           </Switch>
           
@@ -259,4 +294,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

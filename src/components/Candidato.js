@@ -11,6 +11,8 @@ const Empleos = (props) => {
     return candidato.id === id;
   });
 
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
   return (
     <div>
       {marvelHeroes.map(Heroe =>
