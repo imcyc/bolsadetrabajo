@@ -27,7 +27,26 @@ class App extends Component {
       user: null,
       persons: [],
       empresas: [],
-      candidatos: [],
+      candidatos: [
+        {
+          avatar: '',
+          nombre: '',
+          apellidoPaterno: '',
+          apellidoMaterno: '',
+          fechaDeNacimiento: '',
+          estudios: '',
+          titulo: '',
+          jornada: '',
+          direccion: '',
+          ciudad: '',
+          telefono: '',
+          email: '',
+          sueldoMin: '',
+          sueldoMax: '',
+          descripcion: '',
+          visible: false
+        }
+      ],
       filtrados: [],
       nombre: '',
       email: '',
@@ -40,13 +59,13 @@ class App extends Component {
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
       .then(res => {
         const candidatos = res.data;
-        this.setState({ candidatos });
+        //this.setState({ candidatos });
       })
     
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/empresas.php`)
       .then(res => {
         const empresas = res.data;
-        this.setState({ empresas });
+        //this.setState({ empresas });
       })
 
     console.log(this.state.user);
@@ -187,6 +206,7 @@ class App extends Component {
         sueldoMin: event.target.sueldoMin.value,
         sueldoMax: event.target.sueldoMax.value,
         descripcion: event.target.descripcion.value,
+        visible: event.target.visible.value,
     };
 
     axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertcandidato.php`, { candidato })
@@ -210,6 +230,7 @@ class App extends Component {
     event.preventDefault();
     let emailaddress = event.target.emailaddress.value;
     let password = event.target.password.value;
+
     this.setState({
       user: {
         emailaddress,
@@ -225,6 +246,23 @@ class App extends Component {
     event.preventDefault();
     let emailaddress = event.target.emailaddress.value;
     let password = event.target.password.value;
+
+    const usuario = {
+      nombre: event.target.nombre.value,
+      avatar: 'https://image.flaticon.com/icons/png/512/64/64572.png',
+      emailaddress: event.target.emailaddress.value,
+      password: event.target.password.value,
+      tipo: event.target.tipo.value,
+      empresa: event.target.empresa.value,
+      telefono: event.target.telefono.value,
+    };
+
+    axios.post(`http://18.219.47.222/apis/bolsadetrabajo/insertusuario.php`, { usuario })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
     this.setState({
       user: {
         emailaddress,
@@ -233,6 +271,7 @@ class App extends Component {
       registrado: true
     })
     console.log(this.state.user);
+    console.log('ajuuaaaaaaaa!!!');
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 

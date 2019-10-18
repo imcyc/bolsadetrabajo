@@ -42,6 +42,7 @@ const PublicarCandidato = (props) => {
                                             <div className="submit-field">
                                                 <h5>Nombre(s):</h5>
                                                 <input name="nombre" type="text" className="with-border" required />
+                                                <input type="hidden" name="visible" value="true" />
                                             </div>
                                         </div>
 

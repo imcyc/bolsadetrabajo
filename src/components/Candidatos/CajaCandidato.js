@@ -11,7 +11,7 @@ const CajaCandidato = (props) => {
         className="job-listing"
         style={{width: '100%'}}
       >
-    <div className="freelancer">
+    <div className="freelancer" style={{display: (props.visible) ? 'flex':'none'}}>
       <div className="freelancer-overview">
         <div className="freelancer-overview-inner">
           <span className="bookmark-icon"></span>

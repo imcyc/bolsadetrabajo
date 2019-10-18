@@ -4,6 +4,7 @@ import CajaCandidato from './Candidatos/CajaCandidato';
 import Notificaciones from './Sidebars/Notificaciones';
 
 const Candidatos = (props) => {
+
   return(
     <div>
       <div className="margin-top-30"></div>
@@ -14,9 +15,29 @@ const Candidatos = (props) => {
             <h3 className="page-title">Candidatos</h3>
             <Notificaciones filtroTipo={props.filtroTipo} handleAlertas={props.handleAlertas}/>
             <div className="freelancers-container freelancers-list-layout margin-top-35">
-              {props.candidatos.map(candidato => (
-                <CajaCandidato key={candidato.id} id={candidato.id} avatar={candidato.avatar} nombre={candidato.nombre} apellidoPaterno={candidato.apellidoPaterno} apellidoMaterno={candidato.apellidoMaterno} fechaDeNacimiento={candidato.fechaDeNacimiento} estudios={candidato.estudios} titulo={candidato.titulo} jornada={candidato.jornada} direccion={candidato.direccion} ciudad={candidato.ciudad} telefono={candidato.telefono} email={candidato.email} sueldoMin={candidato.sueldoMin} sueldoMax={candidato.sueldoMax} descripcion={candidato.descripcion}/>
-              ))}
+
+                {props.candidatos.map(candidato => (
+                  <CajaCandidato 
+                    key={candidato.id} 
+                    id={candidato.id} 
+                    avatar={candidato.avatar} 
+                    nombre={candidato.nombre} 
+                    apellidoPaterno={candidato.apellidoPaterno} 
+                    apellidoMaterno={candidato.apellidoMaterno} 
+                    fechaDeNacimiento={candidato.fechaDeNacimiento} 
+                    estudios={candidato.estudios} 
+                    titulo={candidato.titulo} 
+                    jornada={candidato.jornada} 
+                    direccion={candidato.direccion} 
+                    ciudad={candidato.ciudad} 
+                    telefono={candidato.telefono} 
+                    email={candidato.email} 
+                    sueldoMin={candidato.sueldoMin} 
+                    sueldoMax={candidato.sueldoMax} 
+                    descripcion={candidato.descripcion}
+                    visible={candidato.visible}
+                  />
+                ))}
             </div>
           </div>
         </div>

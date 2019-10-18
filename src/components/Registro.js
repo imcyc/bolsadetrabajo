@@ -56,6 +56,13 @@ class Registro extends Component {
                   (this.state.title === 'registroUsuario') ? 
                     <form onSubmit={this.props.handleRegistro} style={{display: this.props.registrado ? 'none' : 'block'}}>
                       <div className="input-with-icon-left">
+                        <i className="icon-line-awesome-smile-o"></i>
+                        <input type="text" className="input-text with-border" name="nombre" id="emailaddress-register" placeholder="Nombre"/>
+                        <input type="hidden" name="tipo" value="candidato"/>
+                        <input type="hidden" name="empresa" value=""/>
+                        <input type="hidden" name="telefono" value=""/>
+                      </div>
+                      <div className="input-with-icon-left">
                         <i className="icon-material-baseline-mail-outline"></i>
                         <input type="email" className="input-text with-border" name="emailaddress" id="emailaddress-register" placeholder="Correo Electrónico"/>
                       </div>
@@ -73,7 +80,12 @@ class Registro extends Component {
                   :
                     <form onSubmit={this.props.handleRegistro} style={{display: this.props.registrado ? 'none' : 'block'}}>
                       <div className="input-with-icon-left">
-                        <i className="icon-material-baseline-mail-outline"></i>
+                        <i className="icon-line-awesome-smile-o"></i>
+                        <input type="text" className="input-text with-border" name="nombre" id="emailaddress-register" placeholder="Nombre"/>
+                        <input type="hidden" name="tipo" value="empresa"/>
+                      </div>
+                      <div className="input-with-icon-left">
+                        <i className="icon-line-awesome-street-view"></i>
                         <input type="text" className="input-text with-border" name="empresa" id="empresa-register" placeholder="Nombre de la empresa"/>
                       </div>
                       <div className="input-with-icon-left">
@@ -81,7 +93,7 @@ class Registro extends Component {
                         <input type="email" className="input-text with-border" name="emailaddress" id="emailaddress-register" placeholder="Correo Electrónico"/>
                       </div>
                       <div className="input-with-icon-left">
-                        <i className="icon-material-baseline-phone"></i>
+                        <i className="icon-line-awesome-mobile-phone"></i>
                         <input type="text" className="input-text with-border" name="telefono" id="telefono-register" placeholder="Teléfono"/>
                       </div>
                       <div className="input-with-icon-left">
