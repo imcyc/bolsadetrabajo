@@ -34,7 +34,11 @@ class Registro extends Component {
 
                 <div className="welcome-text" style={{display: this.props.registrado ? 'block' : 'none'}}>
                   <h1>Bienvenido!</h1>
-                  <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                  <div style={{display: 'flex',flexDirection: 'row'}}>
+                    <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>
+
+                    <Link to="/empleos" className="button ripple-effect margin-top-30 green" style={{width: '100%'}}>OFERTAS DE EMPLEO <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                  </div>
                 </div>
   
                 <div className="account-type" style={{display: this.props.registrado ? 'none' : 'flex'}}>
