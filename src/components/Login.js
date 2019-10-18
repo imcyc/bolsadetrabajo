@@ -4,13 +4,13 @@ import ComoFunciona from '../components/Banners/ComoFunciona';
 
 const Login = (props) => {
   return (
-    <div>
+    <div style={{height: '100vh'}}>
       <div className="container" style={{marginTop: '90px'}}>
         <div className="row">
           <div className="col-xl-6 offset-xl-3">
             <div className="login-register-page" style={{marginBottom: '90px'}}>
 
-              <div className="welcome-text">
+              <div className="welcome-text" style={{display: (props.registrado)? 'none':'block'}}>
                 <h3>Bienvenido!</h3>
                 <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                 <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>

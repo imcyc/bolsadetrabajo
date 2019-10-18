@@ -181,9 +181,10 @@ class App extends Component {
       user: {
         emailaddress,
         password
-      }
+      },
+      registrado: true
     })
-
+    window.scrollTo({top: 0, behavior: 'smooth'});
     console.log(this.state.user);
   }
 
@@ -215,7 +216,10 @@ class App extends Component {
             <Route 
               exact 
               path="/login" 
-              render={(props) => <Login {...props} handleSignIn={this.handleSignIn} />}
+              render={(props) => <Login {...props} 
+                registrado={this.state.registrado}
+                handleSignIn={this.handleSignIn}
+                 />}
             />
             
             <Route 

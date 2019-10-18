@@ -4,7 +4,7 @@ import ComoFunciona from './Banners/ComoFunciona';
 
 const Home = () => {
   return (
-    <div>
+    <div style={{height: '100vh'}}>
       <IntroBanner/>
       <ComoFunciona/>
     </div>

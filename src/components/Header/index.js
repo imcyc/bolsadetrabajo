@@ -61,7 +61,7 @@ const Header = (props) => {
                     <div className="header-notifications-trigger">
                       <Link to="#">
                         <div className="user-avatar status-online">
-                          <img src="https://www.quantilia.com/wp-content/themes/quantilia/images/image55.png" alt="" />
+                          <img src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="" />
                         </div>
                       </Link>
                     </div>
