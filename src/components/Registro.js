@@ -81,12 +81,12 @@ class Registro extends Component {
                         <input type="email" className="input-text with-border" name="emailaddress" id="emailaddress-register" placeholder="Correo Electrónico"/>
                       </div>
                       <div className="input-with-icon-left">
-                        <i className="icon-material-outline-lock"></i>
-                        <input type="password" className="input-text with-border" name="password" id="password-register" placeholder="Contraseña"/>
-                      </div>
-                      <div className="input-with-icon-left">
                         <i className="icon-material-baseline-phone"></i>
                         <input type="text" className="input-text with-border" name="telefono" id="telefono-register" placeholder="Teléfono"/>
+                      </div>
+                      <div className="input-with-icon-left">
+                        <i className="icon-material-outline-lock"></i>
+                        <input type="password" className="input-text with-border" name="password" id="password-register" placeholder="Contraseña"/>
                       </div>
                       <div className="input-with-icon-left">
                         <i className="icon-material-outline-lock"></i>

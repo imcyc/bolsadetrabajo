@@ -91,7 +91,17 @@ class App extends Component {
     const ciudad = e.target.value;
     const candidatos = this.state.candidatos.filter(candidato => candidato.ciudad === ciudad);
     this.setState({
-      filtrados: candidatos
+      candidatos: candidatos
+    })
+    console.log(this.state.filtrados);
+  }
+
+  filtroCiudadEmpresas = (e) => {
+    console.log(e.target.value);
+    const ciudad = e.target.value;
+    const empresas = this.state.empresas.filter(empresa => empresa.ciudad === ciudad);
+    this.setState({
+      empresas: empresas
     })
     console.log(this.state.filtrados);
   }
@@ -235,7 +245,7 @@ class App extends Component {
             <Route 
               exact
               path="/empleos"
-              render={(props) => <Empleos {...props} empresas={this.state.empresas} addEmpresas={this.addEmpresas} />}
+              render={(props) => <Empleos {...props} empresas={this.state.empresas} addEmpresas={this.addEmpresas} filtroCiudadEmpresas={this.filtroCiudadEmpresas}   />}
             />
             <Route 
               exact 

@@ -45,7 +45,7 @@ const Header = (props) => {
                 <div className="header-widget hide-on-mobile">
                   <div className="header-notifications">
                     <div className="header-notifications-trigger">
-                      <a href="#"><i className="icon-feather-bell"></i><span>4</span></a>
+                      <Link to="#"><i className="icon-feather-bell"></i><span>4</span></Link>
                     </div>
                     <div className="header-notifications-dropdown">
                       <div className="header-notifications-headline">

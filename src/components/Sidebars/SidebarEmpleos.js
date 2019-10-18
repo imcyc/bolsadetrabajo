@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SidebarEmpleos = () => {
+const SidebarEmpleos = (props) => {
   return (
     <div className="col-xl-3 col-lg-4">
       <div className="sidebar-container">
 
 				<div className="sidebar-widget">
 						<h3>Ubicación:</h3>
-						<select name="ciudad" data-size="7" title="Select Job Type" required>
+						<select name="ciudad" data-size="7" title="Select Job Type" onChange={props.filtroCiudadEmpresas} required>
 								<option value="Aguascalientes">Aguascalientes</option>
 								<option value="Baja California">Baja California</option>
 								<option value="Baja California Sur">Baja California Sur</option>

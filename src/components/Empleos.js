@@ -9,7 +9,7 @@ const Empleos = (props) => {
       <div className="margin-top-40"></div>
       <div className="container">
         <div className="row">
-          <SidebarEmpleos/>
+          <SidebarEmpleos filtroCiudadEmpresas={props.filtroCiudadEmpresas}/>
           <div className="col-xl-9 col-lg-8 content-left-offset">
             <h3 className="page-title">Resultados</h3>
             <Notificaciones/>
