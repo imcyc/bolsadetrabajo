@@ -217,8 +217,9 @@ class App extends Component {
               exact 
               path="/login" 
               render={(props) => <Login {...props} 
-                registrado={this.state.registrado}
                 handleSignIn={this.handleSignIn}
+                registrado={this.state.registrado}
+                usuario={this.state.user}
                  />}
             />
             
@@ -287,7 +288,11 @@ class App extends Component {
             <Route 
               exact
               path="/"
-              render={(props) => <Login {...props} handleSignIn={this.handleSignIn} />}
+              render={(props) => <Login {...props} 
+              handleSignIn={this.handleSignIn}
+              registrado={this.state.registrado}
+              usuario={this.state.user} 
+              />}
             />
           </Switch>
           

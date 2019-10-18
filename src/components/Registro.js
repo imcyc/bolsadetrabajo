@@ -21,7 +21,7 @@ class Registro extends Component {
         <div className="container" style={{marginTop: '90px'}}>
           <div className="row">
             <div className="col-xl-5 offset-xl-3">
-              <div className="login-register-page" style={{marginBottom: '90px'}}>
+              <div className="login-register-page" style={{marginBottom: '90px', height: '100vh'}}>
   
                 <div className="welcome-text">
                   <h3 style={{fontSize: '26px'}}>Por Favor Cree su cuenta!</h3>

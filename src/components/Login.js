@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ComoFunciona from '../components/Banners/ComoFunciona';
 
 const Login = (props) => {
+  console.log(props);
   return (
     <div style={{height: '100vh'}}>
       <div className="container" style={{marginTop: '90px'}}>
@@ -10,8 +11,8 @@ const Login = (props) => {
           <div className="col-xl-6 offset-xl-3">
             <div className="login-register-page" style={{marginBottom: '90px'}}>
 
-              <div className="welcome-text" style={{display: (props.registrado)? 'none':'block'}}>
-                <h3>Bienvenido!</h3>
+              <div className="welcome-text" style={{display: props.registrado ? 'none' : 'block'}}>
+                <h3>BIENVENIDO</h3>
                 <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                 <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
                 <span>No tiene una cuenta? 
@@ -19,7 +20,17 @@ const Login = (props) => {
                 </span>
               </div>
 
-              <form onSubmit={props.handleSignIn}>
+              <div className="welcome-text" style={{display: props.registrado ? 'block' : 'none'}}>
+                <h3>Bienvenido!</h3>
+                <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
+                <div style={{display: 'flex',flexDirection: 'row'}}>
+                  <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>
+
+                  <Link to="/empleos" className="button ripple-effect margin-top-30 green" style={{width: '100%'}}>OFERTAS DE EMPLEO <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                </div>
+              </div>
+
+              <form onSubmit={props.handleSignIn} style={{display: props.registrado ? 'none' : 'block'}}>
                 <div className="input-with-icon-left">
                   <i className="icon-material-baseline-mail-outline"></i>
                   <input type="email" name="emailaddress" className="input-text with-border" id="emailaddress" placeholder="Correo Electrónico" required/>
@@ -36,7 +47,10 @@ const Login = (props) => {
           </div>
         </div>
       </div>
-      <ComoFunciona/>
+      {
+        (props.registrado)? '' : <ComoFunciona/>
+      }
+      
     </div>
   );
 }
