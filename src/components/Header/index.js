@@ -19,6 +19,9 @@ const Header = (props) => {
                       <Link to="/empleos">OFERTAS DE EMPLEO</Link>
                       <ul className="dropdown-nav">
                         <li>
+                          <Link to="/empleos">VER OFERTAS</Link>
+                        </li>
+                        <li>
                           <Link to="/publicar-vacante">PUBLICAR EMPLEO</Link>
                         </li>
                       </ul>
@@ -26,6 +29,9 @@ const Header = (props) => {
                     <li>
                       <Link to="/candidatos">CANDIDATOS</Link>
                       <ul className="dropdown-nav">
+                        <li>
+                          <Link to="/candidatos">VER CANDIDATOS</Link>
+                        </li>
                         <li>
                           <Link to="/publicar-candidato">PUBLICAR CANDIDATO</Link>
                         </li>
