@@ -6,7 +6,7 @@ import CajaEmpleo from './Empleos/CajaEmpleo';
 const Empleos = (props) => {
   return (
     <div>
-      <div className="margin-top-40"></div>
+      <div className="margin-top-30"></div>
       <div className="container">
         <div className="row">
           <SidebarEmpleos filtroCiudadEmpresas={props.filtroCiudadEmpresas}/>

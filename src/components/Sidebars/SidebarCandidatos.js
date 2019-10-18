@@ -7,7 +7,7 @@ const SidebarCandidatos = (props) => {
 
 			<div className="sidebar-widget">
 						<h3>Ubicación:</h3>
-						<select name="ciudad" data-size="7" title="Select Job Type" onChange={props.filtroCiudad} required>
+						<select name="ciudad" data-size="7" title="Select Job Type" onChange={props.filtroCiudad}>
 								<option value="Aguascalientes">Aguascalientes</option>
 								<option value="Baja California">Baja California</option>
 								<option value="Baja California Sur">Baja California Sur</option>
@@ -36,7 +36,8 @@ const SidebarCandidatos = (props) => {
 
 				<div className="sidebar-widget">
 					<h3>Profesión/Especialidad:</h3>
-					<select data-size="7" title="Todas" >
+					<select name="estudios" data-size="7" title="Todas" onChange={props.filtroEstudios} >
+						<option value="">Seleccionar Profesión</option>
 						<option value="Ingeniero Civil">Ingeniero Civil</option>
 						<option value="Ingeniero Estructural">Ingeniero Estructural</option>
 						<option value="Laboratorista de concreto">Laboratorista de concreto</option>

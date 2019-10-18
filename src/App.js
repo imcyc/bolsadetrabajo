@@ -106,6 +106,29 @@ class App extends Component {
     console.log(this.state.filtrados);
   }
 
+  filtroEstudios = (e) => {
+    console.log(e.target.value);
+    const estudios = e.target.value;
+    const candidatos = this.state.candidatos.filter(candidato => candidato.estudios === estudios);
+    this.setState({
+      candidatos: candidatos
+    })
+  }
+
+  filtroTipo = (e) => {
+    console.log(e.target.value);
+    const tipo = e.target.value;
+    const candidatos = this.state.candidatos.filter(candidato => candidato.tipo === tipo);
+    this.setState({
+      candidatos: candidatos
+    })
+    console.log('filtro tipo');
+  }
+
+  handleAlertas = (e) => {
+    console.log(e.target.value);
+  }
+
   handlePublicarEmpleo = (event) => {
     event.preventDefault();
 
@@ -258,7 +281,10 @@ class App extends Component {
               render={(props) => <Candidatos {...props} 
                 filtrados={this.state.filtrados}
                 candidatos={this.state.candidatos}
-                filtroCiudad={this.filtroCiudad}  
+                filtroCiudad={this.filtroCiudad} 
+                filtroEstudios={this.filtroEstudios} 
+                filtroTipo={this.filtroTipo}
+                handleAlertas={this.handleAlertas}
                 />}
             />
             <Route 

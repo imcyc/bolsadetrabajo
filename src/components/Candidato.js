@@ -73,7 +73,6 @@ const Empleos = (props) => {
                 </div>
                 <div className="profile-overview">
                   <div className="overview-item"><span>Residencia:</span><strong>{Heroe.ciudad}</strong></div>
-                  <div className="overview-item"><span>Jornada:</span><strong>{Heroe.jornada}</strong></div>
                 </div>
       
                 
