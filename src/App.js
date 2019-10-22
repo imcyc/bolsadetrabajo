@@ -263,8 +263,6 @@ class App extends Component {
           return <Redirect to="/" />;
         }
       })
-
-    
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
@@ -301,12 +299,15 @@ class App extends Component {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
-  signOut = () => {
+  signOut = (history) => {
     this.setState({
       registrado: false,
       email: '',
       user: null
-    })
+    });
+    if (this.state.registrado === false) {
+      return <Redirect to='/logout' />
+    }
   }
 
   headerNotifications = (event) => {
@@ -317,6 +318,7 @@ class App extends Component {
   }
 
   render(){
+    
     return (
       <HashRouter basename='/'>
         <div id="wrapper" className="App">
@@ -337,6 +339,7 @@ class App extends Component {
                 email={this.state.email}
                 nota={this.state.nota}
                 />}
+                
             />
 
             <Route 

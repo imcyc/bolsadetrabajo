@@ -67,7 +67,7 @@ const Header = (props) => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/logout" signOut={props.signOut}>
+                          <Link onClick={props.signOut}>
                             <i className="icon-material-outline-power-settings-new"></i> Salir
                           </Link>
                         </li>
