@@ -225,9 +225,9 @@ $(document).ready(function(){
 	});
 
 	// Closing function
-    function close_user_dropdown() {
+	function close_user_dropdown() {
 		$('.header-notifications').removeClass("active");
-    }
+	}
 
     // Closes notification dropdown on click outside the conatainer
 	var mouse_is_inside = false;
