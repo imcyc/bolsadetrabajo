@@ -58,13 +58,13 @@ class App extends Component {
   componentDidMount() {
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
       .then(res => {
-        const candidatos = res.data;
+        //const candidatos = res.data;
         //this.setState({ candidatos });
       })
     
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/empresas.php`)
       .then(res => {
-        const empresas = res.data;
+        //const empresas = res.data;
         //this.setState({ empresas });
       })
 
@@ -226,18 +226,44 @@ class App extends Component {
     alert('CANDIDATO AGREGADO CON ÉXITO!!!')
   }
 
-  handleSignIn = (event) => {
+  handleSignIn = (event, props) => {
     event.preventDefault();
     let emailaddress = event.target.emailaddress.value;
     let password = event.target.password.value;
 
-    this.setState({
-      user: {
-        emailaddress,
-        password
-      },
-      registrado: true
-    })
+    const usuario = {
+      emailaddress: emailaddress,
+      password: password
+    }
+
+    axios.post(`http://18.219.47.222/apis/bolsadetrabajo/showusuarios.php`, { usuario })
+      .then(res => {
+        console.log(res);
+        console.log(typeof(res.data));
+        if(res.data === "found"){
+          console.log('Ya entraste!!!')
+          this.setState({
+            user: {
+              email: emailaddress,
+              password: password
+            },
+            registrado: true
+          });
+          this.props.history.push("/dashboard");
+        }else{
+          console.log('no entraste!!!');
+          this.setState({
+            user: {
+              email: "",
+              password: ""
+            },
+            registrado: false
+          });
+          this.props.history.push("/");
+        }
+      })
+
+    
     window.scrollTo({top: 0, behavior: 'smooth'});
     console.log(this.state.user);
   }

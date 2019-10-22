@@ -50,6 +50,19 @@ const SidebarEmpleos = (props) => {
 				</div>
 
 				<div className="sidebar-widget">
+					<h3>Sueldo:</h3>
+					<select data-size="7" title="Todas" >
+						<option value="5000">$1,000 - $5,000 MX</option>
+						<option value="10000">$5,000 - $10,000 MX</option>
+						<option value="15000">$10,000 - $15,000 MX</option>
+						<option value="20000">$15,000 - $20,000 MX</option>
+						<option value="30000">$25,000 - $30,000 MX</option>
+						<option value="35000">$30,000 - $35,000 MX</option>
+						<option value="40000">$35,000 - $40,000 MX</option>
+					</select>
+				</div>
+
+				<div className="sidebar-widget">
 					<h3>Tipo:</h3>
 					<div className="switches-list">
 						<div className="switch-container">
@@ -90,18 +103,7 @@ const SidebarEmpleos = (props) => {
 					</div>
 				</div>
 
-        <div className="sidebar-widget">
-					<h3>Sueldo:</h3>
-					<select data-size="7" title="Todas" >
-						<option value="5000">$1,000 - $5,000 MX</option>
-						<option value="10000">$5,000 - $10,000 MX</option>
-						<option value="15000">$10,000 - $15,000 MX</option>
-						<option value="20000">$15,000 - $20,000 MX</option>
-						<option value="30000">$25,000 - $30,000 MX</option>
-						<option value="35000">$30,000 - $35,000 MX</option>
-						<option value="40000">$35,000 - $40,000 MX</option>
-					</select>
-				</div>
+        
 
       </div>
     </div>
