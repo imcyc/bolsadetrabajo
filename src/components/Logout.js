@@ -12,12 +12,10 @@ const Logout = (props) => {
                 <h3>Gracias Por Visitarnos!</h3>
                 <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                 <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
-                <span>Ya tiene una cuenta? 
-                  <Link to="/login"> Ingresar!</Link>
-                </span>
-                <span>No tiene una cuenta? 
-                  <Link to="/registro"> Regístrese!</Link>
-                </span>
+                <div style={{display: 'flex',flexDirection: 'row'}}>
+                  <Link to="/login" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>INGRESAR <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                  <Link to="/registro" className="button ripple-effect margin-top-30 green" style={{width: '100%'}}>REGISTRARSE <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                </div>
               </div>
             </div>
           </div>
