@@ -43,9 +43,9 @@ const Header = (props) => {
               </div>
               <div className="right-side">
                 <div className="header-widget hide-on-mobile">
-                  <div className={`header-notifications ${props.header-notifications-isActive}`} >
+                  <div className={`header-notifications ${props.headerNotificationsIsActive}`} >
                     <div className="header-notifications-trigger">
-                      <i className="icon-feather-bell" onClick={props.header-notifications}></i><span>4</span>
+                      <i className="icon-feather-bell" onClick={props.headerNotifications}></i><span>4</span>
                     </div>
                     <div className="header-notifications-dropdown">
                       <div className="header-notifications-headline">
