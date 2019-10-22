@@ -7,7 +7,7 @@ const Header = (props) => {
     <header id="header-container" className="fullwidth">
       <div id="header">
         {
-          (props.user) ?
+          (props.registrado) ?
             <div className="container">
               <div className="left-side">
                 <div id="logo">

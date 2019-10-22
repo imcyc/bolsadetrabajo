@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { HashRouter, Route, Switch, withRouter } from "react-router-dom";
+import { HashRouter, Route, Switch, withRouter, Redirect } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -51,6 +51,7 @@ class App extends Component {
       nombre: '',
       email: '',
       password: '',
+      nota: false
     };
     this.handlePublicarEmpleo = this.handlePublicarEmpleo.bind(this);
   }
@@ -226,7 +227,7 @@ class App extends Component {
     alert('CANDIDATO AGREGADO CON ÉXITO!!!')
   }
 
-  handleSignIn = (event, props) => {
+  handleSignIn = (event) => {
     event.preventDefault();
     let emailaddress = event.target.emailaddress.value;
     let password = event.target.password.value;
@@ -247,9 +248,10 @@ class App extends Component {
               email: emailaddress,
               password: password
             },
-            registrado: true
+            registrado: true,
+            nota: false
           });
-          this.props.history.push("/dashboard");
+          return <Redirect to="/dashboard" />;
         }else{
           console.log('no entraste!!!');
           this.setState({
@@ -257,9 +259,10 @@ class App extends Component {
               email: "",
               password: ""
             },
-            registrado: false
+            registrado: false,
+            nota: true
           });
-          this.props.history.push("/");
+          return <Redirect to="/" />;
         }
       })
 
@@ -309,7 +312,11 @@ class App extends Component {
     return (
       <HashRouter basename='/'>
         <div id="wrapper" className="App">
-          <Header user={this.state.user}/>
+          <Header 
+            user={this.state.user}
+            registrado={this.state.registrado}
+            email={this.state.email}
+          />
           <Switch>
             <Route 
               exact 
@@ -317,8 +324,9 @@ class App extends Component {
               render={(props) => <Login {...props} 
                 handleSignIn={this.handleSignIn}
                 registrado={this.state.registrado}
-                usuario={this.state.user}
-                 />}
+                email={this.state.email}
+                nota={this.state.nota}
+                />}
             />
             
             <Route 
@@ -365,7 +373,11 @@ class App extends Component {
             <Route 
               exact
               path="/dashboard"
-              render={(props) => <Dashboard {...props} parentCallback={this.callbackFunction} candidatos={this.state.candidatos} />}
+              render={(props) => <Dashboard {...props} 
+                parentCallback={this.callbackFunction} 
+                candidatos={this.state.candidatos}
+                email={this.state.email} 
+                />}
             />
             <Route 
               exact
@@ -392,7 +404,8 @@ class App extends Component {
               render={(props) => <Login {...props} 
               handleSignIn={this.handleSignIn}
               registrado={this.state.registrado}
-              usuario={this.state.user} 
+              email={this.state.email}
+              nota={this.state.nota}
               />}
             />
           </Switch>

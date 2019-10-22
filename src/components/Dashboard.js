@@ -17,6 +17,7 @@ const Dashboard = (props) => {
 		        <div className="dashboard-content-inner" >
                     <div className="dashboard-headline">
                         <h3>Bienvenido!</h3>
+                        <h4>{props.email}</h4>
                         <span>Panel de control!</span>
                         <nav id="breadcrumbs" class="dark">
                             <ul>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ComoFunciona = () => {
   return(
-    <div className="section padding-top-35 padding-bottom-65">
+    <div className="section padding-top-15 padding-bottom-10">
       <div className="container">
         <div className="row">
 

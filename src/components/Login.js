@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import ComoFunciona from '../components/Banners/ComoFunciona';
 
 const Login = (props) => {
-  console.log(props);
+  console.log("estos son los props: " + props);
   return (
-    <div style={{height: '100vh'}}>
+    <div style={{height: '85vh'}}>
       <div className="container" style={{marginTop: '90px'}}>
         <div className="row">
           <div className="col-xl-6 offset-xl-3">
@@ -20,8 +20,16 @@ const Login = (props) => {
                 </span>
               </div>
 
+              <div className="welcome-text" style={{display: props.nota ? 'block' : 'none'}}>
+                <div className="notification error closeable">
+                  <p>Sus datos de usuario no son correctos,<br/><b>Por Favor vuelva a intentarlo... Gracias!</b></p>
+                  <a className="close"></a>
+                </div>
+              </div>
+
               <div className="welcome-text" style={{display: props.registrado ? 'block' : 'none'}}>
                 <h3>Bienvenido!</h3>
+                <h4>{props.email}</h4>
                 <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                 <div style={{display: 'flex',flexDirection: 'row'}}>
                   <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>

@@ -35,6 +35,22 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="footer-top-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-4 col-lg-4 col-md-12"></div>
+            <div className="col-xl-4 col-lg-4 col-md-12"></div>
+            <div className="col-xl-4 col-lg-4 col-md-12" style={{marginTop: '20px',marginBottom: '20px'}}>
+              <h3><i className="icon-feather-mail"></i> Pedir Información</h3>
+              <p>Reciba información y las últimas noticias..</p>
+              <form action="#" method="get" class="newsletter">
+                <input type="text" name="fname" placeholder="Ingresar Correo electrónico"/>
+                <button type="submit"><i className="icon-feather-arrow-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="footer-bottom-section">
         <div className="container">
