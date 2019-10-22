@@ -12,7 +12,6 @@ const Empleos = (props) => {
           <SidebarEmpleos filtroCiudadEmpresas={props.filtroCiudadEmpresas}/>
           <div className="col-xl-9 col-lg-8 content-left-offset">
             <h3 className="page-title">Resultados</h3>
-            <Notificaciones/>
             <div className="listings-container margin-top-35">
               {props.empresas.map(empresa => (
                 <CajaEmpleo 

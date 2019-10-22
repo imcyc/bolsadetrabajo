@@ -51,7 +51,8 @@ class App extends Component {
       nombre: '',
       email: '',
       password: '',
-      nota: false
+      nota: false,
+      headerNotificationsIsActive: ''
     };
     this.handlePublicarEmpleo = this.handlePublicarEmpleo.bind(this);
   }
@@ -59,14 +60,14 @@ class App extends Component {
   componentDidMount() {
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/candidatos.php`)
       .then(res => {
-        //const candidatos = res.data;
-        //this.setState({ candidatos });
+        const candidatos = res.data;
+        this.setState({ candidatos });
       })
     
     axios.get(`http://18.219.47.222/apis/bolsadetrabajo/empresas.php`)
       .then(res => {
-        //const empresas = res.data;
-        //this.setState({ empresas });
+        const empresas = res.data;
+        this.setState({ empresas });
       })
 
     console.log(this.state.user);
@@ -244,10 +245,8 @@ class App extends Component {
         if(res.data === "found"){
           console.log('Ya entraste!!!')
           this.setState({
-            user: {
-              email: emailaddress,
-              password: password
-            },
+            email: emailaddress,
+            password: password,
             registrado: true,
             nota: false
           });
@@ -255,10 +254,8 @@ class App extends Component {
         }else{
           console.log('no entraste!!!');
           this.setState({
-            user: {
-              email: "",
-              password: ""
-            },
+            email: "",
+            password: "",
             registrado: false,
             nota: true
           });
@@ -268,7 +265,6 @@ class App extends Component {
 
     
     window.scrollTo({top: 0, behavior: 'smooth'});
-    console.log(this.state.user);
   }
 
   handleRegistro = (event) => {
@@ -308,14 +304,22 @@ class App extends Component {
     this.setState({user: null})
   }
 
+  headerNotifications = (event) => {
+    event.preventDefault();
+    this.setState({
+      headerNotificationsIsActive: 'active'
+    })
+  }
+
   render(){
     return (
       <HashRouter basename='/'>
         <div id="wrapper" className="App">
           <Header 
-            user={this.state.user}
             registrado={this.state.registrado}
             email={this.state.email}
+            headerNotifications={this.headerNotifications}
+            headerNotificationsIsActive={this.state.headerNotificationsIsActive}
           />
           <Switch>
             <Route 

@@ -13,7 +13,6 @@ const Candidatos = (props) => {
           <SidebarCandidatos filtroCiudad={props.filtroCiudad} filtroEstudios={props.filtroEstudios}/>
           <div className="col-xl-9 col-lg-8 content-left-offset">
             <h3 className="page-title">Candidatos</h3>
-            <Notificaciones filtroTipo={props.filtroTipo} handleAlertas={props.handleAlertas}/>
             <div className="freelancers-container freelancers-list-layout margin-top-35">
 
                 {props.candidatos.map(candidato => (

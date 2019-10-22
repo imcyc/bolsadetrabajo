@@ -7,7 +7,7 @@ const Header = (props) => {
     <header id="header-container" className="fullwidth">
       <div id="header">
         {
-          (props.registrado) ?
+          (props.email) ?
             <div className="container">
               <div className="left-side">
                 <div id="logo">
@@ -43,9 +43,9 @@ const Header = (props) => {
               </div>
               <div className="right-side">
                 <div className="header-widget hide-on-mobile">
-                  <div className="header-notifications">
+                  <div className={`header-notifications ${props.header-notifications-isActive}`} >
                     <div className="header-notifications-trigger">
-                      <Link to="#"><i className="icon-feather-bell"></i><span>4</span></Link>
+                      <i className="icon-feather-bell" onClick={props.header-notifications}></i><span>4</span>
                     </div>
                     <div className="header-notifications-dropdown">
                       <div className="header-notifications-headline">
@@ -58,7 +58,7 @@ const Header = (props) => {
                   </div>
                   <div className="header-notifications">
                     <div className="header-notifications-trigger">
-                      <Link to="#"><i className="icon-feather-mail"></i><span>3</span></Link>
+                      <Link to="/login"><i className="icon-feather-mail"></i><span>3</span></Link>
                     </div>
                   </div>
                 </div>

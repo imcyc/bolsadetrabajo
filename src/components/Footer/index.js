@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="col-xl-4 col-lg-4 col-md-12" style={{marginTop: '20px',marginBottom: '20px'}}>
               <h3><i className="icon-feather-mail"></i> Pedir Información</h3>
               <p>Reciba información y las últimas noticias..</p>
-              <form action="#" method="get" class="newsletter">
+              <form action="#" method="get" className="newsletter">
                 <input type="text" name="fname" placeholder="Ingresar Correo electrónico"/>
                 <button type="submit"><i className="icon-feather-arrow-right"></i></button>
               </form>

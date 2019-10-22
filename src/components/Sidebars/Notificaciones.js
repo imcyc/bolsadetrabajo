@@ -3,6 +3,7 @@ import React from 'react';
 const Notificaciones = (props) => {
   return (
     <div className="notify-box margin-top-15">
+  
       <div className="switch-container" style={{marginTop: '13px'}}>
         <label className="switch">
           <input type="checkbox" onChange={props.handleAlertas} value="alerta" />
@@ -11,6 +12,7 @@ const Notificaciones = (props) => {
         </label>
       </div>
 
+  
       <div className="sort-by">
         <select onChange={props.filtroTipo} style={{marginBottom: "0px",paddingBottom: '0px', marginTop: '10px'}}>
           <option value="Relevantes">Relevantes</option>
@@ -19,6 +21,7 @@ const Notificaciones = (props) => {
           <option value="Aleatorios">Aleatorios</option>
         </select>
       </div>
+  
     </div>
   );
 }
