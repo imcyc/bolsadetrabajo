@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch, withRouter, Redirect } from "react-router-do
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import Registro from './components/Registro';
 import Empleos from './components/Empleos';
 import Empleo from './components/Empleo';
@@ -52,7 +53,7 @@ class App extends Component {
       email: '',
       password: '',
       nota: false,
-      headerNotificationsIsActive: ''
+      headerNotificationsIsActive: false
     };
     this.handlePublicarEmpleo = this.handlePublicarEmpleo.bind(this);
   }
@@ -300,14 +301,18 @@ class App extends Component {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
-  signOut() {
-    this.setState({user: null})
+  signOut = () => {
+    this.setState({
+      registrado: false,
+      email: '',
+      user: null
+    })
   }
 
   headerNotifications = (event) => {
     event.preventDefault();
     this.setState({
-      headerNotificationsIsActive: 'active'
+      headerNotificationsIsActive: !this.state.headerNotificationsIsActive
     })
   }
 
@@ -320,6 +325,7 @@ class App extends Component {
             email={this.state.email}
             headerNotifications={this.headerNotifications}
             headerNotificationsIsActive={this.state.headerNotificationsIsActive}
+            signOut={this.signOut}
           />
           <Switch>
             <Route 
@@ -331,6 +337,14 @@ class App extends Component {
                 email={this.state.email}
                 nota={this.state.nota}
                 />}
+            />
+
+            <Route 
+              exact 
+              path="/logout" 
+              render={(props) => <Logout {...props} 
+                signOut={() => this.signOut()}
+              />}
             />
             
             <Route 

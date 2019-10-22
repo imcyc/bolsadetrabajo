@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import logo from '../../logo.svg';
+import { statement } from '@babel/template';
 
 const Header = (props) => {
   return (
     <header id="header-container" className="fullwidth">
       <div id="header">
         {
-          (props.email) ?
+          (props.registrado) ?
             <div className="container">
               <div className="left-side">
                 <div id="logo">
@@ -42,65 +43,33 @@ const Header = (props) => {
                 <div className="clearfix"></div>
               </div>
               <div className="right-side">
-                <div className="header-widget hide-on-mobile">
-                  <div className={`header-notifications ${props.headerNotificationsIsActive}`} >
-                    <div className="header-notifications-trigger">
-                      <i className="icon-feather-bell" onClick={props.headerNotifications}></i><span>4</span>
-                    </div>
-                    <div className="header-notifications-dropdown">
-                      <div className="header-notifications-headline">
-                        <h4>Notificaciones</h4>
-                        <button className="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-                          <i className="icon-feather-check-square"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="header-notifications">
-                    <div className="header-notifications-trigger">
-                      <Link to="/login"><i className="icon-feather-mail"></i><span>3</span></Link>
-                    </div>
-                  </div>
-                </div>
                 <div className="header-widget">
-                  <div className="header-notifications user-menu">
+                  <div className={`header-notifications user-menu ${props.headerNotificationsIsActive ? 'active':'inactive'}`}>
                     <div className="header-notifications-trigger">
-                      <Link to="#">
-                        <div className="user-avatar status-online">
+                        <div className="user-avatar status-online" onClick={props.headerNotifications}>
                           <img src="https://image.flaticon.com/icons/png/512/64/64572.png" alt="" />
                         </div>
-                      </Link>
                     </div>
 
                     <div className="header-notifications-dropdown">
                       <div className="user-status">
                         <div className="user-details">
-                          <div className="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt="" /></div>
+                          <div className="user-avatar status-online" style={{height: '19px'}}><img src="images/user-avatar-small-01.jpg" alt="" /></div>
                           <div className="user-name">
-                            Juan Gallardo <span>Ingeniero Civil</span>
+                            {props.email}
                           </div>
-                        </div>
-                        <div className="status-switch" id="snackbar-user-status">
-                          <label className="user-online current-status">En Linea</label>
-                          <label className="user-invisible">Invisible</label>
-                          <span className="status-indicator" aria-hidden="true"></span>
                         </div>
                       </div>
                       <ul className="user-menu-small-nav">
                         <li>
                           <Link to="/dashboard">
                             <i className="icon-material-outline-dashboard"></i> Panel de control
-                  </Link>
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/dashboard">
-                            <i className="icon-material-outline-settings"></i> Configuracion
-                  </Link>
-                        </li>
-                        <li>
-                          <Link to="/">
+                          <Link to="/logout">
                             <i className="icon-material-outline-power-settings-new"></i> Salir
-                  </Link>
+                          </Link>
                         </li>
                       </ul>
                     </div>
