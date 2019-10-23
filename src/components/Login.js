@@ -23,7 +23,7 @@ const Login = (props) => {
               <div className="welcome-text" style={{display: props.nota ? 'block' : 'none'}}>
                 <div className="notification error closeable">
                   <p>Sus datos de usuario no son correctos,<br/><b>Por Favor vuelva a intentarlo... Gracias!</b></p>
-                  <a className="close"></a>
+                  <Link className="close"></Link>
                 </div>
               </div>
 

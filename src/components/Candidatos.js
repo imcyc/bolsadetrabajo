@@ -1,7 +1,6 @@
 import React from 'react';
 import SidebarCandidatos from './Sidebars/SidebarCandidatos';
 import CajaCandidato from './Candidatos/CajaCandidato';
-import Notificaciones from './Sidebars/Notificaciones';
 
 const Candidatos = (props) => {
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import SidebarEmpleos from './Sidebars/SidebarEmpleos';
-import Notificaciones from './Sidebars/Notificaciones';
 import CajaEmpleo from './Empleos/CajaEmpleo';
 
 const Empleos = (props) => {
