@@ -7,7 +7,8 @@ class Registro extends Component {
     super(props);
     this.state = {
       title: "registroUsuario",
-      registrado: this.props.registrado
+      registrado: this.props.registrado,
+      nombre: ""
     }
   }
 
@@ -24,20 +25,25 @@ class Registro extends Component {
               <div className="login-register-page" style={{marginBottom: '90px', height: '100vh'}}>
   
                 <div className="welcome-text">
-                  <h3 style={{fontSize: '26px'}}>Por Favor Cree su cuenta!</h3>
+                  <h3 style={{fontSize: '26px',display: this.props.registrado ? 'none' : 'block'}}>CREAR SU CUENTA</h3>
+                  <div style={{display: this.props.registrado ? 'block' : 'none'}}>
+                    <h3 style={{fontSize: '26px',display: this.props.registrado ? 'block' : 'none'}}>BIENVENIDO </h3>
+                    <h3 style={{color: '#0073a5',padding: '20px'}}>{this.props.nombre}</h3>
+                  </div>
                   <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                   <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
-                  <span>Ya tiene una cuenta? 
+                  <span style={{display: this.props.registrado ? 'none' : 'block'}}>Ya tiene una cuenta? 
                     <Link to="/"> Ingresar!</Link>
                   </span>
                 </div>
 
                 <div className="welcome-text" style={{display: this.props.registrado ? 'block' : 'none'}}>
-                  <h1>Bienvenido!</h1>
                   <div style={{display: 'flex',flexDirection: 'row'}}>
-                    <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>
-
-                    <Link to="/empleos" className="button ripple-effect margin-top-30 green" style={{width: '100%'}}>OFERTAS DE EMPLEO <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                    {this.props.tipo === "candidato" ? 
+                      <Link to="/empleos" className="button ripple-effect margin-top-30 green" style={{width: '100%'}}>OFERTAS DE EMPLEO <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                    : 
+                      <Link to="/candidatos" className="button ripple-effect margin-top-30" style={{width: '100%',marginRight: '10px'}}>CANDIDATOS <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                    }
                   </div>
                 </div>
   
@@ -57,7 +63,7 @@ class Registro extends Component {
                     <form onSubmit={this.props.handleRegistro} style={{display: this.props.registrado ? 'none' : 'block'}}>
                       <div className="input-with-icon-left">
                         <i className="icon-line-awesome-smile-o"></i>
-                        <input type="text" className="input-text with-border" name="nombre" id="emailaddress-register" placeholder="Nombre"/>
+                        <input type="text" className="input-text with-border" name="nombre" placeholder="Nombre completo"/>
                         <input type="hidden" name="tipo" value="candidato"/>
                         <input type="hidden" name="empresa" value=""/>
                         <input type="hidden" name="telefono" value=""/>
@@ -81,7 +87,7 @@ class Registro extends Component {
                     <form onSubmit={this.props.handleRegistro} style={{display: this.props.registrado ? 'none' : 'block'}}>
                       <div className="input-with-icon-left">
                         <i className="icon-line-awesome-smile-o"></i>
-                        <input type="text" className="input-text with-border" name="nombre" id="emailaddress-register" placeholder="Nombre"/>
+                        <input type="text" className="input-text with-border" name="nombre" placeholder="Nombre completo"/>
                         <input type="hidden" name="tipo" value="empresa"/>
                       </div>
                       <div className="input-with-icon-left">

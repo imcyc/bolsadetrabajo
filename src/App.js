@@ -25,7 +25,7 @@ class App extends Component {
       isShow: true,
       value: '',
       registrado: false,
-      user: null,
+      user: {},
       persons: [],
       empresas: [],
       candidatos: [
@@ -71,7 +71,11 @@ class App extends Component {
         this.setState({ empresas });
       })
 
-    console.log(this.state.user);
+    
+  }
+
+  componentDidUpdate() {
+    console.log(`El usuario al cargar: ${this.state.user.nombre}`);
   }
 
   handleChange = event => {
@@ -224,7 +228,6 @@ class App extends Component {
         this.setState({ candidatos });
       })
 
-      
     window.scrollTo(0, 0);
     alert('CANDIDATO AGREGADO CON ÉXITO!!!')
   }
@@ -268,8 +271,6 @@ class App extends Component {
 
   handleRegistro = (event) => {
     event.preventDefault();
-    let emailaddress = event.target.emailaddress.value;
-    let password = event.target.password.value;
 
     const usuario = {
       nombre: event.target.nombre.value,
@@ -285,17 +286,20 @@ class App extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        this.setState(prevState => ({
+          user: {
+            ...prevState.user,
+            nombre: usuario.nombre,
+            tipo: usuario.tipo
+          },
+          registrado: {
+            ...prevState.registrado,
+            registrado: true
+          }
+         
+        }));
       })
 
-    this.setState({
-      user: {
-        emailaddress,
-        password
-      },
-      registrado: true
-    })
-    console.log(this.state.user);
-    console.log('ajuuaaaaaaaa!!!');
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
@@ -325,6 +329,8 @@ class App extends Component {
           <Header 
             registrado={this.state.registrado}
             email={this.state.email}
+            nombre={this.state.user.nombre}
+            tipo={this.state.user.tipo}
             headerNotifications={this.headerNotifications}
             headerNotificationsIsActive={this.state.headerNotificationsIsActive}
             signOut={this.signOut}
@@ -357,6 +363,8 @@ class App extends Component {
                 handleRegistro={this.handleRegistro}
                 registrado={this.state.registrado}
                 usuario={this.state.user}
+                nombre={this.state.user.nombre}
+                tipo={this.state.user.tipo}
                 />}
             />
             <Route 

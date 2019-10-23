@@ -15,28 +15,31 @@ const Header = (props) => {
                 </div>
                 <nav id="navigation">
                   <ul id="responsive">
-                    <li>
-                      <Link to="/empleos">OFERTAS DE EMPLEO</Link>
-                      <ul className="dropdown-nav">
-                        <li>
-                          <Link to="/empleos">VER OFERTAS</Link>
-                        </li>
-                        <li>
-                          <Link to="/publicar-vacante">PUBLICAR EMPLEO</Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <Link to="/candidatos">CANDIDATOS</Link>
-                      <ul className="dropdown-nav">
-                        <li>
-                          <Link to="/candidatos">VER CANDIDATOS</Link>
-                        </li>
-                        <li>
-                          <Link to="/publicar-candidato">PUBLICAR CANDIDATO</Link>
-                        </li>
-                      </ul>
-                    </li>
+                    {props.tipo === "candidato" ? 
+                      <li>
+                        <Link to="/empleos">OFERTAS DE EMPLEO</Link>
+                        <ul className="dropdown-nav">
+                          <li>
+                            <Link to="/empleos">VER OFERTAS</Link>
+                          </li>
+                          <li>
+                            <Link to="/publicar-candidato">PUBLICAR CURRICULUM</Link>
+                          </li>
+                        </ul>
+                      </li>
+                      :
+                      <li>
+                        <Link to="/candidatos">CANDIDATOS</Link>
+                        <ul className="dropdown-nav">
+                          <li>
+                            <Link to="/candidatos">VER CANDIDATOS</Link>
+                          </li>
+                          <li>
+                            <Link to="/publicar-vacante">PUBLICAR OFERTA DE EMPLEO</Link>
+                          </li>
+                        </ul>
+                      </li>
+                    }
                   </ul>
                 </nav>
                 <div className="clearfix"></div>
@@ -55,7 +58,7 @@ const Header = (props) => {
                         <div className="user-details">
                           <div className="user-avatar status-online" style={{height: '19px'}}><img src="images/user-avatar-small-01.jpg" alt="" /></div>
                           <div className="user-name">
-                            {props.email}
+                            {props.nombre}
                           </div>
                         </div>
                       </div>
@@ -66,7 +69,7 @@ const Header = (props) => {
                           </Link>
                         </li>
                         <li>
-                          <Link onClick={props.signOut}>
+                          <Link to="/logout" onClick={props.signOut}>
                             <i className="icon-material-outline-power-settings-new"></i> Salir
                           </Link>
                         </li>
