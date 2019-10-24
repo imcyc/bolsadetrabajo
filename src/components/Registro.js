@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
+import ComoFunciona from './Banners/ComoFunciona';
 
 class Registro extends Component {
 
@@ -21,7 +22,7 @@ class Registro extends Component {
       <div>
         <div className="container" style={{marginTop: '90px'}}>
           <div className="row">
-            <div className="col-xl-5 offset-xl-3">
+            <div className="col-xl-6 offset-xl-3">
               <div className="login-register-page" style={{marginBottom: '90px'}}>
   
                 <div className="welcome-text">
@@ -118,6 +119,7 @@ class Registro extends Component {
 
             </div>
           </div>
+          <ComoFunciona />
         </div>
   
   

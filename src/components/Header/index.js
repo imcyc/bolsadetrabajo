@@ -4,13 +4,6 @@ import logo from '../../logo.svg';
 
 const Header = (props) => {
 
-  let prueba;
-  if(props.registrado){
-    prueba = 'hola';
-  } else {
-    prueba = 'adios';
-  }
-
   return (
     <header id="header-container" className="fullwidth">
       <div id="header">
@@ -23,7 +16,6 @@ const Header = (props) => {
                 </div>
                 <nav id="navigation">
                   <ul id="responsive">
-                    {prueba}
                     {props.tipo === "candidato" ? 
                       <li>
                         <Link to="/empleos">OFERTAS DE EMPLEO</Link>

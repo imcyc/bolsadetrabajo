@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ComoFunciona from './Banners/ComoFunciona';
 
 const Logout = (props) => {
   return (
-    <div style={{height: '85vh'}}>
+    <div style={{marginBottom: '50px'}}>
       <div className="container" style={{marginTop: '90px'}}>
         <div className="row">
           <div className="col-xl-6 offset-xl-3">
@@ -20,6 +21,7 @@ const Logout = (props) => {
             </div>
           </div>
         </div>
+        <ComoFunciona />
       </div>
     </div>
   );
