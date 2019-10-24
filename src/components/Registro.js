@@ -22,7 +22,7 @@ class Registro extends Component {
         <div className="container" style={{marginTop: '90px'}}>
           <div className="row">
             <div className="col-xl-5 offset-xl-3">
-              <div className="login-register-page" style={{marginBottom: '90px', height: '100vh'}}>
+              <div className="login-register-page" style={{marginBottom: '90px'}}>
   
                 <div className="welcome-text">
                   <h3 style={{fontSize: '26px',display: this.props.registrado ? 'none' : 'block'}}>CREAR SU CUENTA</h3>

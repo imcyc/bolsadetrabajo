@@ -296,7 +296,6 @@ class App extends Component {
             ...prevState.registrado,
             registrado: true
           }
-         
         }));
       })
 
@@ -304,14 +303,19 @@ class App extends Component {
   }
 
   signOut = (history) => {
-    this.setState({
-      registrado: false,
-      email: '',
-      user: null
-    });
-    if (this.state.registrado === false) {
-      return <Redirect to='/logout' />
-    }
+    this.setState(prevState => ({
+      user: {
+        ...prevState.user,
+        nombre: '',
+        avatar: '',
+        emailaddress: '',
+        password: '',
+        tipo: '',
+        empresa: '',
+        telefono: '',
+      },
+      registrado: false
+    }));
   }
 
   headerNotifications = (event) => {
@@ -351,7 +355,8 @@ class App extends Component {
             <Route 
               exact 
               path="/logout" 
-              render={(props) => <Logout {...props} 
+              render={(props) => <Logout {...props}
+                registrado={this.state.registrado} 
                 signOut={() => this.signOut()}
               />}
             />

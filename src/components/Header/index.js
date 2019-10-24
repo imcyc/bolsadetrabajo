@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import logo from '../../logo.svg';
 
 const Header = (props) => {
+
+  let prueba;
+  if(props.registrado){
+    prueba = 'hola';
+  } else {
+    prueba = 'adios';
+  }
+
   return (
     <header id="header-container" className="fullwidth">
       <div id="header">
@@ -15,6 +23,7 @@ const Header = (props) => {
                 </div>
                 <nav id="navigation">
                   <ul id="responsive">
+                    {prueba}
                     {props.tipo === "candidato" ? 
                       <li>
                         <Link to="/empleos">OFERTAS DE EMPLEO</Link>
@@ -58,7 +67,7 @@ const Header = (props) => {
                         <div className="user-details">
                           <div className="user-avatar status-online" style={{height: '19px'}}><img src="images/user-avatar-small-01.jpg" alt="" /></div>
                           <div className="user-name">
-                            {props.nombre}
+                            {props.registrado ? props.nombre : ''}
                           </div>
                         </div>
                       </div>
