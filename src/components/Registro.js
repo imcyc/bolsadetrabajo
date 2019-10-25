@@ -34,7 +34,7 @@ class Registro extends Component {
                   <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                   <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
                   <span style={{display: this.props.registrado ? 'none' : 'block'}}>Ya tiene una cuenta?<br/>
-                    <Link to="/" className="button button-sliding-icon ripple-effect margin-top-10"> Ingresar! <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                    <Link to="/" className="button button-sliding-icon ripple-effect margin-top-10"> INGRESAR! <i className="icon-material-outline-arrow-right-alt"></i></Link>
                   </span>
                 </div>
 

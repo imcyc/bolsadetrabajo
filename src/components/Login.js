@@ -16,7 +16,7 @@ const Login = (props) => {
                 <h4 style={{paddingTop: '10px'}}>BOLSA DE TRABAJO DE LA INDUSTRIA DE LA CONSTRUCCIÓN</h4>
                 <p>Instituto Mexicano del Cemento y del Concreto A.C.</p>
                 <span>No tiene una cuenta?<br/>
-                  <Link to="/registro" className="button button-sliding-icon ripple-effect"> REGÍSTRESE AQUÍ! <i className="icon-material-outline-arrow-right-alt"></i></Link>
+                  <Link to="/registro" className="button button-sliding-icon ripple-effect margin-top-10"> REGÍSTRESE AQUÍ! <i className="icon-material-outline-arrow-right-alt"></i></Link>
                 </span>
               </div>
 
