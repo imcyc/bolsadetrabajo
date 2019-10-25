@@ -290,6 +290,7 @@ class App extends Component {
           user: {
             ...prevState.user,
             nombre: usuario.nombre,
+            email: usuario.emailaddress,
             tipo: usuario.tipo
           },
           registrado: {

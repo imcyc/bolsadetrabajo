@@ -11,11 +11,11 @@ const Header = (props) => {
           (props.registrado) ?
             <div className="container">
               <div className="left-side">
-                <div id="logo">
+                <div id="logo" style={{width: '100px'}}>
                   <Link to="/"><img src={logo} alt="" /></Link>
                 </div>
                 <nav id="navigation">
-                  <ul id="responsive">
+                  <ul>
                     {props.tipo === "candidato" ? 
                       <li>
                         <Link to="/empleos">OFERTAS DE EMPLEO</Link>
@@ -59,7 +59,8 @@ const Header = (props) => {
                         <div className="user-details">
                           <div className="user-avatar status-online" style={{height: '19px'}}><img src="images/user-avatar-small-01.jpg" alt="" /></div>
                           <div className="user-name">
-                            {props.registrado ? props.nombre : ''}
+                            {props.registrado ? props.nombre : props.email}
+                            {props.email}
                           </div>
                         </div>
                       </div>
