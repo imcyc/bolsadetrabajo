@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import logo from '../../logo.svg';
 
 const Header = (props) => {
-
   return (
     <header id="header-container" className="fullwidth">
       <div id="header">
@@ -16,7 +15,6 @@ const Header = (props) => {
                 </div>
                 <nav id="navigation">
                   <ul>
-                    {props.tipo === "candidato" ? 
                       <li>
                         <Link to="/empleos">OFERTAS DE EMPLEO</Link>
                         <ul className="dropdown-nav">
@@ -28,7 +26,6 @@ const Header = (props) => {
                           </li>
                         </ul>
                       </li>
-                      :
                       <li>
                         <Link to="/candidatos">CANDIDATOS</Link>
                         <ul className="dropdown-nav">
@@ -40,7 +37,6 @@ const Header = (props) => {
                           </li>
                         </ul>
                       </li>
-                    }
                   </ul>
                 </nav>
                 <div className="clearfix"></div>
